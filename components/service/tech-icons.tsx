@@ -1,0 +1,88 @@
+import type { ComponentType } from "react";
+import {
+  SiAngular,
+  SiAndroid,
+  SiApple,
+  SiDjango,
+  SiDocker,
+  SiDotnet,
+  SiDrupal,
+  SiFigma,
+  SiFirebase,
+  SiFlutter,
+  SiGooglecloud,
+  SiHtml5,
+  SiIonic,
+  SiJoomla,
+  SiKotlin,
+  SiLaravel,
+  SiMongodb,
+  SiMysql,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiOpenjdk,
+  SiPhp,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiShopify,
+  SiSitecore,
+  SiSpring,
+  SiSwift,
+  SiSymfony,
+  SiVuedotjs,
+  SiWoocommerce,
+  SiWordpress,
+} from "react-icons/si";
+import { FaAws, FaMicrosoft } from "react-icons/fa6";
+import { Layers3, ShoppingBag, Smartphone } from "lucide-react";
+
+type Icon = ComponentType<{ className?: string; style?: React.CSSProperties }>;
+
+/* colour: brand hex, or null → follows the text colour (for near-black marks) */
+const map: Record<string, [Icon, string | null]> = {
+  PHP: [SiPhp, "#777BB4"],
+  ".NET": [SiDotnet, "#512BD4"],
+  Laravel: [SiLaravel, "#FF2D20"],
+  Symfony: [SiSymfony, null],
+  Python: [SiPython, "#3776AB"],
+  Java: [SiOpenjdk, "#ED8B00"],
+  Django: [SiDjango, "#0C4B33"],
+  "Spring / Hibernate": [SiSpring, "#6DB33F"],
+  "Node.js": [SiNodedotjs, "#5FA04E"],
+  React: [SiReact, "#61DAFB"],
+  Angular: [SiAngular, "#DD0031"],
+  "Vue.js": [SiVuedotjs, "#4FC08D"],
+  "HTML / CSS": [SiHtml5, "#E34F26"],
+  "UI/UX Design": [SiFigma, "#F24E1E"],
+  "Next.js": [SiNextdotjs, null],
+  Android: [SiAndroid, "#3DDC84"],
+  iOS: [SiApple, null],
+  Flutter: [SiFlutter, "#02569B"],
+  Ionic: [SiIonic, "#3880FF"],
+  Kotlin: [SiKotlin, "#7F52FF"],
+  "React Native": [SiReact, "#61DAFB"],
+  Swift: [SiSwift, "#F05138"],
+  Xamarin: [Smartphone as unknown as Icon, "#3498DB"],
+  WordPress: [SiWordpress, "#21759B"],
+  Drupal: [SiDrupal, "#0678BE"],
+  Sitecore: [SiSitecore, "#EB1F1F"],
+  Joomla: [SiJoomla, "#F44321"],
+  Magento: [ShoppingBag as unknown as Icon, "#EE672F"],
+  Shopify: [SiShopify, "#7AB55C"],
+  WooCommerce: [SiWoocommerce, "#96588A"],
+  MEAN: [SiMongodb, "#47A248"],
+  MERN: [SiMongodb, "#47A248"],
+  AWS: [FaAws, "#FF9900"],
+  Azure: [FaMicrosoft, "#0078D4"],
+  "Google Cloud": [SiGooglecloud, "#4285F4"],
+  Docker: [SiDocker, "#2496ED"],
+  MySQL: [SiMysql, "#4479A1"],
+  PostgreSQL: [SiPostgresql, "#4169E1"],
+  Firebase: [SiFirebase, "#FFCA28"],
+};
+
+export function TechIcon({ name, className = "h-6 w-6" }: { name: string; className?: string }) {
+  const [Icon, color] = map[name] ?? [Layers3 as unknown as Icon, "#4f7dff"];
+  return <Icon className={className} style={color ? { color } : undefined} />;
+}
