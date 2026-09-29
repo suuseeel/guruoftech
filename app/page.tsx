@@ -252,7 +252,7 @@ const ecosystemCategories = [
     area: "right" as const,
   },
   {
-    id: "backend",
+    id: "backend", 
     label: "Backend & AI",
     icon: <Server className="h-4 w-4" />,
     chips: ["Node.js", ".NET", "AI/ML"],
