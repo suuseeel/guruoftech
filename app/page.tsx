@@ -40,6 +40,7 @@ import {
   ChevronsRight,
 } from "lucide-react";
 import { Reveal } from "@/components/reveal";
+import { BrandWord } from "@/components/brand/word";
 import { SectionHeading, SectionHeadingLeft } from "@/components/section-heading";
 import { TechGrid } from "@/components/textures/tech-grid";
 import { NetworkBackground } from "@/components/textures/network-background";
@@ -500,7 +501,8 @@ const industries = [
     blurb: "Patient portals, scheduling, and compliant record systems.",
     examples: ["Patient portals & scheduling", "Compliant record systems"],
     stack: ["PHP", "Laravel", ".NET", "MySQL", "AI triage assistants"],
-    src:"/homepage/Healthcare_3D.png"
+    src:"/homepage/Healthcare_3D.png",
+    href: "/industries/healthcare"
   },
   {
     name: "Automotive",
@@ -508,7 +510,8 @@ const industries = [
     blurb: "Dealer platforms, inventory, and service booking tools.",
     examples: ["Dealer & inventory platforms", "Service booking tools"],
     stack: ["React", "Node.js", "PostgreSQL", "Demand forecasting AI"],
-    src:"/homepage/Automotive_3D.png"
+    src:"/homepage/Automotive_3D.png",
+    href: "/industries/automotive"
   },
   {
     name: "Fintech",
@@ -516,7 +519,8 @@ const industries = [
     blurb: "Payments, ledgers, and reporting built for scrutiny.",
     examples: ["Payments & ledgers", "Reporting built for scrutiny"],
     stack: [".NET", "Java", "PostgreSQL", "AWS", "Fraud-detection models"],
-    src:"/homepage/Fintech_3D.png"
+    src:"/homepage/Fintech_3D.png",
+    href: "/industries/fintech"
   },
   {
     name: "Retail & eCommerce",
@@ -524,7 +528,8 @@ const industries = [
     blurb: "Storefronts, catalogs, and order management at scale.",
     examples: ["Storefronts & catalogs", "Order management at scale"],
     stack: ["Magento", "Shopify", "WooCommerce", "Recommendation AI"],
-    src:"/homepage/Retail_3D.png"
+    src:"/homepage/Retail_3D.png",
+    href: "/industries/retail-ecommerce"
   },
   {
     name: "Education",
@@ -532,7 +537,8 @@ const industries = [
     blurb: "LMS platforms, portals, and student-facing apps.",
     examples: ["LMS platforms & portals", "Student-facing apps"],
     stack: ["React", "Laravel", "Flutter", "AI tutoring assistants"],
-    src:"/homepage/Education_3D.png"
+    src:"/homepage/Education_3D.png",
+    href: "/industries/education"
   },
   {
     name: "Travel & Tourism",
@@ -540,7 +546,8 @@ const industries = [
     blurb: "Booking engines and itinerary management systems.",
     examples: ["Booking engines", "Itinerary management"],
     stack: ["Node.js", "Vue.js", "MySQL", "Dynamic pricing AI"],
-    src:"/homepage/Travel_3D.png"
+    src:"/homepage/Travel_3D.png",
+    href: "/industries/travel"
   },
   {
     name: "Banking & Financial Services",
@@ -548,7 +555,8 @@ const industries = [
     blurb: "Secure dashboards and back-office tooling.",
     examples: ["Secure dashboards", "Back-office tooling"],
     stack: [".NET", "AWS", "Docker", "Document intelligence AI"],
-    src:"/homepage/Banking_3D.png"
+    src:"/homepage/Banking_3D.png",
+    href: "/industries/banking"
   },
   {
     name: "Logistics",
@@ -556,7 +564,8 @@ const industries = [
     blurb: "Fleet tracking, warehouse, and supply chain systems.",
     examples: ["Fleet tracking", "Warehouse & supply chain systems"],
     stack: ["Python", "Django", "PostgreSQL", "Route-optimization AI"],
-    src:"/homepage/Logistics_3D.png"
+    src:"/homepage/Logistics_3D.png",
+    href: "/industries/logistics"
   },
   {
     name: "Media & Entertainment",
@@ -564,7 +573,8 @@ const industries = [
     blurb: "Streaming, content platforms, and audience tools.",
     examples: ["Streaming & content platforms", "Audience tools"],
     stack: ["React", "Node.js", "AWS", "Content-tagging AI"],
-    src:"/homepage/Media_3D.png"
+    src:"/homepage/Media_3D.png",
+    href: "/industries/media"
   },
 ];
 
@@ -900,14 +910,14 @@ export default function Home() {
             ===================================== */}
 
             <div className="relative z-20 items-center flex justify-center. flex-col text-center ">
-              <h1
+              <h2
                 className="guru-hero-title animate-fade-in-up"
                 style={{ animationDelay: "0.05s" }}
               >
                 We engineer
                 <span className="guru-gradient-word">AI-powered</span> software
                 for <span className="guru-gradient-word">real businesses</span>
-              </h1>
+              </h2>
 
               {/* Description */}
 
@@ -915,7 +925,7 @@ export default function Home() {
                 className="guru-hero-description animate-fade-in-up"
                 style={{ animationDelay: "0.1s" }}
               >
-                Guru of Tech designs and ships AI-driven web platforms, mobile
+                <BrandWord full /> designs and ships AI-driven web platforms, mobile
                 apps, and automation systems — LLM-powered chatbots and agents,
                 retrieval over your own data, computer vision, predictive
                 analytics — for teams that need working software, not a slide
@@ -1117,7 +1127,14 @@ export default function Home() {
         <div className="section mx-auto max-w-7xl px-6 lg:px-8">
           <SectionHeading
             eyebrow="Behind the work"
-            title="More about Guru of Tech"
+            title={
+              <>
+                More about{" "}
+                <span className="bg-linear-to-r from-accent to-accent-2 bg-clip-text text-transparent">
+                  <BrandWord full />
+                </span>
+              </>
+            }
             description="How we staff projects, what we've shipped, and what it's like to work with us."
           />
 

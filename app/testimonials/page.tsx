@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { Quote } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { CtaPanel } from "@/components/industry/sections";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Clients & Testimonials",
   description:
-    "Customer testimonials that demonstrate GuruOfTech's ability to build market-leading solutions by fusing original thought, technological know-how and subject experience.",
-};
+    brandText("Customer testimonials that demonstrate GuruOfTech's ability to build market-leading solutions by fusing original thought, technological know-how and subject experience.", brand),
+  };
+}
 
 const stats = [
   { value: "2,531", label: "Project Finished" },

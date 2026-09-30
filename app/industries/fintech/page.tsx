@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { CreditCard, Landmark, Smartphone, Wallet } from "lucide-react";
 import { HeroSplit } from "@/components/industry/hero";
 import {
@@ -10,11 +12,14 @@ import {
   StatsGradient,
 } from "@/components/industry/sections";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "FinTech",
   description:
-    "GuruOfTech develops intelligent FinTech software — payment gateways, digital wallets, lending apps and mobile banking — to secure financial processes.",
-};
+    brandText("GuruOfTech develops intelligent FinTech software — payment gateways, digital wallets, lending apps and mobile banking — to secure financial processes.", brand),
+  };
+}
 
 const offerings = [
   {

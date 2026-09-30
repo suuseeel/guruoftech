@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
@@ -7,11 +9,14 @@ import { ServiceArt } from "@/components/service/art";
 import { ProcessFive } from "@/components/service/blocks";
 import { hireSteps, servicesMeta } from "@/components/service/data";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Services",
   description:
-    "Software development, eCommerce, mobile apps, analytics and DevOps, testing, and startup consulting from Guru of Tech.",
-};
+    brandText("Software development, eCommerce, mobile apps, analytics and DevOps, testing, and startup consulting from Guru of Tech.", brand),
+  };
+}
 
 export default function ServicesPage() {
   return (

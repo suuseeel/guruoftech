@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Bot, MessageCircle, RotateCcw, Send, X } from "lucide-react";
 import { answer, chipLabels, fallback, getIntent, starterChips, type Intent, type Link as L } from "./knowledge";
+import { useBrand } from "@/components/brand/context";
+import { brandText } from "@/lib/brand";
 
 type Msg = { id: number; from: "bot" | "user"; text: string; links?: L[]; chips?: string[] };
 
@@ -20,8 +22,9 @@ function toMsg(id: number, it: Intent): Msg {
 }
 
 export function ChatWidget() {
+  const brand = useBrand();
   const [open, setOpen] = useState(false);
-  const [msgs, setMsgs] = useState<Msg[]>([WELCOME]);
+  const [msgs, setMsgs] = useState<Msg[]>(() => [{ ...WELCOME, text: brandText(WELCOME.text, brand) }]);
   const [typing, setTyping] = useState(false);
   const [text, setText] = useState("");
   const idRef = useRef(1);
@@ -94,7 +97,7 @@ export function ChatWidget() {
     window.clearTimeout(timer.current);
     setTyping(false);
     idRef.current = 1;
-    setMsgs([WELCOME]);
+    setMsgs([{ ...WELCOME, text: brandText(WELCOME.text, brand) }]);
   };
 
   const last = msgs[msgs.length - 1];
@@ -105,7 +108,7 @@ export function ChatWidget() {
       {/* panel */}
       <div
         role="dialog"
-        aria-label="Chat with Guru of Tech assistant"
+        aria-label={`Chat with ${brand.fullName} assistant`}
         aria-hidden={!open}
         className={`fixed z-[200] flex flex-col overflow-hidden border border-border bg-background shadow-2xl transition-all duration-300 max-sm:inset-x-0 max-sm:bottom-0 max-sm:h-[88dvh] max-sm:rounded-t-3xl sm:bottom-24 sm:right-6 sm:h-[36rem] sm:max-h-[calc(100dvh-8rem)] sm:w-[24rem] sm:rounded-3xl ${
           open ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-6 opacity-0 max-sm:translate-y-full"
@@ -117,7 +120,7 @@ export function ChatWidget() {
             <Bot className="h-5 w-5" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-semibold leading-tight">Guru of Tech Assistant</p>
+            <p className="text-sm font-semibold leading-tight">{brand.name} Assistant</p>
             <p className="flex items-center gap-1.5 text-caption text-white/80">
               <span className="h-2 w-2 rounded-full bg-emerald-300" /> Instant answers
             </p>

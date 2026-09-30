@@ -2,7 +2,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { BrandLogo } from "@/components/brand/logo";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
@@ -485,14 +485,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
           ================================================= */}
 
           <Link href="/" className="guru-brand">
-            <Image
-              src="/techlightz.png"
-              alt="GuruOfTech"
-              width={160}
-              height={50}
-              priority
-              className="guru-brand-logo"
-            />
+            <BrandLogo />
           </Link>
 
           {/* =================================================

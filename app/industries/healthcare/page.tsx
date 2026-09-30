@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { CalendarClock, FileHeart, ShieldCheck, Sparkles } from "lucide-react";
 import { HeroSplit } from "@/components/industry/hero";
 import { CtaPanel, OfferRows, RelatedIndustries, StatsStrip } from "@/components/industry/sections";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Healthcare",
-  description: "Patient portals, scheduling, and compliant record systems built by Guru of Tech.",
-};
+  description: brandText("Patient portals, scheduling, and compliant record systems built by Guru of Tech.", brand),
+  };
+}
 
 const offerings = [
   { icon: CalendarClock, title: "Patient portals & scheduling", desc: "Portals where patients book, reschedule and follow up without calling the front desk." },

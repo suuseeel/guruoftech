@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { ArrowUpRight, Award, Compass, LifeBuoy, Mail, PartyPopper } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Careers",
-  description: "Level up your career graph and join the GuruOfTech team for an exciting journey.",
-};
+  description: brandText("Level up your career graph and join the GuruOfTech team for an exciting journey.", brand),
+  };
+}
 
 const perks = [
   {

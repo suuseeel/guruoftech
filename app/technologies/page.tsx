@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import Link from "next/link";
 import { ArrowUpRight, Layers } from "lucide-react";
 import { Reveal } from "@/components/reveal";
@@ -7,11 +9,14 @@ import { TechCloud } from "@/components/service/art";
 import { TechIcon } from "@/components/service/tech-icons";
 import { techMeta } from "@/components/service/data";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Technologies",
   description:
-    "The backend, frontend, mobile, CMS, eCommerce, cloud, and database technology stack Guru of Tech builds with.",
-};
+    brandText("The backend, frontend, mobile, CMS, eCommerce, cloud, and database technology stack Guru of Tech builds with.", brand),
+  };
+}
 
 export default function TechnologiesPage() {
   return (

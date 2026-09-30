@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import Link from "next/link";
 import { ArrowUpRight, Check, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { AiSubnav, HashFocus } from "@/components/ai/client";
 import { aiGroups, aiItemCount, aiPrinciples, aiProcess, type AiGroup, type AiItem } from "@/components/ai/data";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "AI Solutions",
   description:
-    "AI development, agents and automation, data and machine learning, conversational and voice AI, and MLOps and consulting from Guru of Tech.",
-};
+    brandText("AI development, agents and automation, data and machine learning, conversational and voice AI, and MLOps and consulting from Guru of Tech.", brand),
+  };
+}
 
 const tint = (c: string, pct: number) => `color-mix(in srgb, ${c} ${pct}%, transparent)`;
 

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { Contact, Handshake, Lightbulb, LineChart, Lock, PiggyBank, Wallet, Wrench } from "lucide-react";
 import { HeroBanner } from "@/components/industry/hero";
 import { toClientOfferings } from "@/components/industry/serialize";
@@ -11,11 +13,14 @@ import {
   StatsBand,
 } from "@/components/industry/sections";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Banking & Financial Services",
   description:
-    "GuruOfTech develops customized banking and financial websites and mobile apps — financial management, stock trading, alternative investment and P2P lending.",
-};
+    brandText("GuruOfTech develops customized banking and financial websites and mobile apps — financial management, stock trading, alternative investment and P2P lending.", brand),
+  };
+}
 
 const offerings = [
   {

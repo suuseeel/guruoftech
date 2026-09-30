@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { Compass, Quote, RefreshCw, ShieldCheck, Target, Users } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { CtaBar } from "@/components/industry/sections";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "About Us",
   description:
-    "GuruOfTech is a globally recognized Web Development Company offering trustworthy and reliable Software Development, Software Outsourcing, eCommerce, Analytics, and DevOps Services.",
-};
+    brandText("GuruOfTech is a globally recognized Web Development Company offering trustworthy and reliable Software Development, Software Outsourcing, eCommerce, Analytics, and DevOps Services.", brand),
+  };
+}
 
 const stats = [
   { value: "2,531", label: "Project Finished" },

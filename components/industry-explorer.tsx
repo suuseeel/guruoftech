@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { IndustryArt } from "@/components/industry/art";
-import { Check, Layers } from "lucide-react";
+import { ArrowUpRight, Check, Layers } from "lucide-react";
 
 type Industry = {
   name: string;
@@ -15,6 +16,8 @@ type Industry = {
    *  e.g. "/images/industries/retail-3d.png"
    *  Leave undefined to show the glow-only fallback. */
   src?: string;
+  /** Dedicated industry page this card links out to, e.g. "/industries/healthcare". */
+  href: string;
 };
 
 export function IndustryExplorer({ industries }: { industries: Industry[] }) {
@@ -133,6 +136,20 @@ export function IndustryExplorer({ industries }: { industries: Industry[] }) {
                   <div className="pointer-events-none absolute inset-0 rounded-full bg-linear-to-br from-accent/30 to-accent-2/30 blur-[60px]" />
                   <IndustryArt slug={current.name} className="max-w-[17rem]" />
                 </div>
+              </div>
+
+              <div className="relative mt-8 flex flex-col items-start gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-body-sm max-w-md text-muted">
+                  See the full picture on the dedicated {current.name} page — case studies,
+                  engagement models, and how we scope a first project.
+                </p>
+                <Link
+                  href={current.href}
+                  className="group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-linear-to-r from-accent to-accent-2 px-5 py-2.5 text-sm font-medium text-white shadow-sm shadow-accent/25 transition-transform hover:scale-[1.02]"
+                >
+                  Explore {current.name}
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
               </div>
             </motion.div>
           </AnimatePresence>

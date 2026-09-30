@@ -7,6 +7,9 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { ChatWidget } from "@/components/chatbot/chat-widget";
+import { Toaster } from "@/components/toaster";
+import { BrandProvider } from "@/components/brand/context";
+import { getRequestBrand } from "@/lib/brand-server";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,16 +21,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Guru of Tech — Software, Web & Mobile Development",
-    template: "%s — Guru of Tech",
-  },
-  description:
-    "Guru of Tech is a full-stack software development company building web platforms, mobile apps, and e-commerce products for businesses across the globe.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
+    title: {
+      default: `${brand.name} — Software, Web & Mobile Development`,
+      template: `%s — ${brand.name}`,
+    },
+    description: brand.description,
+    icons: { icon: brand.favicon },
+  };
+}
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const brand = await getRequestBrand();
+
   return (
     <html
       lang="en"
@@ -35,14 +43,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col bg-background text-foreground">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <BackgroundFX />
-          <ScrollToTop />
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <ChatWidget />
-        </ThemeProvider>
+        <BrandProvider brand={brand}>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+            <BackgroundFX />
+            <ScrollToTop />
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <ChatWidget />
+            <Toaster />
+          </ThemeProvider>
+        </BrandProvider>
       </body>
     </html>
   );

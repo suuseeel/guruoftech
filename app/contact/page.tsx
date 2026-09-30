@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { ContactForm } from "@/components/contact-form";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Contact Us",
-  description: "Get in touch with Guru of Tech to discuss your next software project.",
-};
+  description: brandText("Get in touch with Guru of Tech to discuss your next software project.", brand),
+  };
+}
 
 const contactDetails = [
   { icon: Mail, label: "Email", value: "info@guruoftech.com", href: "mailto:info@guruoftech.com" },

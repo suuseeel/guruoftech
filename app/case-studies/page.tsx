@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { IndustryArt } from "@/components/industry/art";
 import Link from "next/link";
 import { ArrowUpRight, Building2, Rocket, ShoppingCart, Smartphone } from "lucide-react";
@@ -6,10 +8,13 @@ import { Reveal } from "@/components/reveal";
 import { CtaBar } from "@/components/industry/sections";
 import { industriesMeta } from "@/components/industry/data";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Case Studies",
-  description: "Detailed case studies from Guru of Tech engagements — coming soon.",
-};
+  description: brandText("Detailed case studies from Guru of Tech engagements — coming soon.", brand),
+  };
+}
 
 const workTypes = [
   {

@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { Reveal } from "@/components/reveal";
 import { CtaPanel } from "@/components/industry/sections";
 import { Arch } from "@/components/team/person";
 import { depts, team, type Dept } from "@/components/team/data";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Team",
-  description: "Meet the people behind Guru of Tech — developers, designers, managers and leadership.",
-};
+  description: brandText("Meet the people behind Guru of Tech — developers, designers, managers and leadership.", brand),
+  };
+}
 
 const podParts = [
   { n: "01", title: "A lead engineer", text: "One senior person accountable for how the thing is built." },

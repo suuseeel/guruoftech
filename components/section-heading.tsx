@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Reveal } from "@/components/reveal";
 
 export function SectionHeading({
@@ -7,7 +8,7 @@ export function SectionHeading({
   align = "center",
 }: {
   eyebrow?: string;
-  title: string;
+  title: ReactNode;
   description?: string;
   align?: "center" | "left";
 }) {

@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { IndustryArt } from "@/components/industry/art";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { industriesMeta, type IndustryMeta } from "@/components/industry/data";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Industries",
   description:
-    "Industries Guru of Tech builds software for, including healthcare, fintech, retail, education, and logistics.",
-};
+    brandText("Industries Guru of Tech builds software for, including healthcare, fintech, retail, education, and logistics.", brand),
+  };
+}
 
 /* Column spans at lg (6-col grid): rows read 3+3 / 2+2+2 / 4+2 / 2+4 */
 const spans = [

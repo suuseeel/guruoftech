@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { BookOpen, Contact, GraduationCap, Lightbulb, Lock, Sparkles, Users, Wrench } from "lucide-react";
 import { HeroEditorial } from "@/components/industry/hero";
 import { toClientOfferings } from "@/components/industry/serialize";
@@ -11,11 +13,14 @@ import {
   StatsTiles,
 } from "@/components/industry/sections";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Education & eLearning",
   description:
-    "GuruOfTech creates specialized eLearning solutions — EdTech portals, LXP, LMS and BYOC apps — that promote growth, effectiveness and high performance.",
-};
+    brandText("GuruOfTech creates specialized eLearning solutions — EdTech portals, LXP, LMS and BYOC apps — that promote growth, effectiveness and high performance.", brand),
+  };
+}
 
 const offerings = [
   {

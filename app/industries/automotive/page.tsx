@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { Cloud, GraduationCap, Network, ShieldCheck } from "lucide-react";
 import { HeroSplit } from "@/components/industry/hero";
 import {
@@ -10,11 +12,14 @@ import {
   StatsStrip,
 } from "@/components/industry/sections";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Automotive",
   description:
-    "GuruOfTech delivers feature-rich automotive IT solutions — cloud migration, resilient IT operations, standardized business processes and remote learning at scale.",
-};
+    brandText("GuruOfTech delivers feature-rich automotive IT solutions — cloud migration, resilient IT operations, standardized business processes and remote learning at scale.", brand),
+  };
+}
 
 const offerings = [
   {

@@ -876,6 +876,7 @@
 
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "./TechnologyDNA.css";
+import { useBrand } from "@/components/brand/context";
 
 import {
   Monitor,
@@ -1117,6 +1118,7 @@ function Network({
 ========================================================= */
 
 function CenterCore() {
+  const brand = useBrand();
   return (
     <div className="tdna-core" style={{ zIndex: 7 }}>
       <div className="tdna-orbit orbit-a" />
@@ -1124,8 +1126,8 @@ function CenterCore() {
       <div className="tdna-orbit orbit-c" />
 
       <div className="tdna-core-circle">
-        <div className="tdna-g-logo">G</div>
-        <div className="tdna-core-name">GuruOfTech</div>
+        <div className="tdna-g-logo">{brand.logoLetter}</div>
+        <div className="tdna-core-name">{brand.name}</div>
       </div>
     </div>
   );

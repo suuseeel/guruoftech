@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { BookOpen, Code2, Rocket, Wrench } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Blog",
-  description: "Engineering notes and updates from Guru of Tech — coming soon.",
-};
+  description: brandText("Engineering notes and updates from Guru of Tech — coming soon.", brand),
+  };
+}
 
 const topics = [
   { icon: Code2, title: "Engineering notes", desc: "How we approach architecture, tooling, and tradeoffs on real projects." },

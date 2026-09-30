@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { Contact, Lightbulb, Lock, Mic, Music, Newspaper, Video, Wrench } from "lucide-react";
 import { HeroOrbit } from "@/components/industry/hero";
 import {
@@ -10,11 +12,14 @@ import {
   StatsCircles,
 } from "@/components/industry/sections";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Media & Entertainment",
   description:
-    "GuruOfTech builds web, mobile and software applications for multimedia content distribution and live streaming — music, video, news aggregation and podcasting.",
-};
+    brandText("GuruOfTech builds web, mobile and software applications for multimedia content distribution and live streaming — music, video, news aggregation and podcasting.", brand),
+  };
+}
 
 const offerings = [
   {

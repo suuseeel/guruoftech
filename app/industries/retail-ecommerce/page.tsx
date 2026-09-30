@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import { Layers, Smartphone, Store, Users } from "lucide-react";
 import { HeroStage } from "@/components/industry/hero";
 import {
@@ -10,11 +12,14 @@ import {
   StatsOutline,
 } from "@/components/industry/sections";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "Retail & eCommerce",
   description:
-    "GuruOfTech builds personalized retail and eCommerce experiences — mCommerce, multichannel commerce, B2B/B2C marketplaces and online storefronts.",
-};
+    brandText("GuruOfTech builds personalized retail and eCommerce experiences — mCommerce, multichannel commerce, B2B/B2C marketplaces and online storefronts.", brand),
+  };
+}
 
 const offerings = [
   {

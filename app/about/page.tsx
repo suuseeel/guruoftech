@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { getRequestBrand } from "@/lib/brand-server";
+import { brandText } from "@/lib/brand";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -11,11 +13,14 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { AboutKeyVisual } from "@/components/about-key-visual";
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const brand = await getRequestBrand();
+  return {
   title: "About Us",
   description:
-    "Guru of Tech is a full-stack software development company committed to reliable, trustworthy engineering.",
-};
+    brandText("Guru of Tech is a full-stack software development company committed to reliable, trustworthy engineering.", brand),
+  };
+}
 
 const stats = [
   { value: "6", label: "Core Services" },
@@ -54,7 +59,8 @@ const values = [
   },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const brand = await getRequestBrand();
   return (
     <>
     <style>{css}</style>
@@ -107,9 +113,10 @@ export default function AboutPage() {
     </h2>
 
     <p>
-      Guru of Tech is a globally recognized software development company
-      based in Noida, India — building web platforms, mobile apps, and
-      e-commerce products for businesses across the globe.
+      {brandText(
+        "Guru of Tech is a globally recognized software development company based in Noida, India — building web platforms, mobile apps, and e-commerce products for businesses across the globe.",
+        brand,
+      )}
     </p>
   </div>
 </section>
