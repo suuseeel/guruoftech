@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { IndustryArt } from "@/components/industry/art";
-import { ArrowUpRight, Check, Layers } from "lucide-react";
+import { ArrowUpRight, Check, Layers, Sparkles } from "lucide-react";
 
 type Industry = {
   name: string;
@@ -12,6 +12,10 @@ type Industry = {
   blurb: string;
   examples: string[];
   stack: string[];
+  /** A specific, real claim about how we work in this industry — pulled from
+   *  that industry's own page, not generic boilerplate. Shown as a distinct
+   *  callout so every tab says something different about the company. */
+  highlight: string;
   /** Path or URL to a 3D illustration/render for this industry.
    *  e.g. "/images/industries/retail-3d.png"
    *  Leave undefined to show the glow-only fallback. */
@@ -78,27 +82,42 @@ export function IndustryExplorer({ industries }: { industries: Industry[] }) {
               transition={{ duration: 0.25, ease: "easeOut" }}
               className=""
             >
-              <div className="flex items-center gap-4">
-                <span className="icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-accent">
-                  {current.icon}
-                </span>
-                <div>
-                  <h3 className="text-h4 bg-linear-to-r from-accent via-accent-strong to-accent-2 bg-clip-text font-extrabold text-transparent">
-                    {current.name}
-                  </h3>
-                  <p className="text-body-sm mt-2 max-w-lg text-muted">
-                    {current.blurb}
-                  </p>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div className="flex items-center gap-4">
+                  <span className="icon-badge flex h-14 w-14 shrink-0 items-center justify-center rounded-xl text-accent">
+                    {current.icon}
+                  </span>
+                  <div>
+                    <h3 className="text-h4 bg-linear-to-r from-accent via-accent-strong to-accent-2 bg-clip-text font-extrabold text-transparent">
+                      {current.name}
+                    </h3>
+                    <p className="text-body-sm mt-2 max-w-lg text-muted">
+                      {current.blurb}
+                    </p>
+                  </div>
                 </div>
+                <Link
+                  href={current.href}
+                  className="group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-linear-to-r from-accent to-accent-2 px-5 py-2.5 text-sm font-medium text-white shadow-sm shadow-accent/25 transition-transform hover:scale-[1.02]"
+                >
+                  Explore {current.name}
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
               </div>
+
               <div className="relative grid gap-10 lg:grid-cols-[1fr_420px] lg:gap-16">
                 {/* left: text content */}
                 <div>
-                  <div className="mt-7 grid gap-6 border-t border-border pt-6 sm:grid-row-2">
+                  <div className="mt-7 flex items-start gap-3 rounded-2xl border border-accent/20 bg-accent-soft/40 p-4">
+                    <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                    <p className="text-body-sm text-foreground/85">{current.highlight}</p>
+                  </div>
+
+                  <div className="mt-6 grid gap-6 border-t border-border pt-6 sm:grid-row-2">
                     <div>
                       <h4 className="text-caption flex items-center gap-1.5 font-semibold uppercase tracking-widest text-accent">
                         <Check className="h-3.5 w-3.5" />
-                        Typical solutions
+                        {current.name} solutions we build
                       </h4>
                       <ul className="mt-3 space-y-2.5">
                         {current.examples.map((e) => (
@@ -136,20 +155,6 @@ export function IndustryExplorer({ industries }: { industries: Industry[] }) {
                   <div className="pointer-events-none absolute inset-0 rounded-full bg-linear-to-br from-accent/30 to-accent-2/30 blur-[60px]" />
                   <IndustryArt slug={current.name} className="max-w-[17rem]" />
                 </div>
-              </div>
-
-              <div className="relative mt-8 flex flex-col items-start gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-body-sm max-w-md text-muted">
-                  See the full picture on the dedicated {current.name} page — case studies,
-                  engagement models, and how we scope a first project.
-                </p>
-                <Link
-                  href={current.href}
-                  className="group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-linear-to-r from-accent to-accent-2 px-5 py-2.5 text-sm font-medium text-white shadow-sm shadow-accent/25 transition-transform hover:scale-[1.02]"
-                >
-                  Explore {current.name}
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </Link>
               </div>
             </motion.div>
           </AnimatePresence>

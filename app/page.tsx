@@ -501,6 +501,7 @@ const industries = [
     blurb: "Patient portals, scheduling, and compliant record systems.",
     examples: ["Patient portals & scheduling", "Compliant record systems"],
     stack: ["PHP", "Laravel", ".NET", "MySQL", "AI triage assistants"],
+    highlight: "The same NDA and strict data-handling standard we apply on every project — not an add-on for healthcare clients, the default.",
     src:"/homepage/Healthcare_3D.png",
     href: "/industries/healthcare"
   },
@@ -510,6 +511,7 @@ const industries = [
     blurb: "Dealer platforms, inventory, and service booking tools.",
     examples: ["Dealer & inventory platforms", "Service booking tools"],
     stack: ["React", "Node.js", "PostgreSQL", "Demand forecasting AI"],
+    highlight: "We standardize process and business functions end-to-end — from R&D through dealer network management and after-sales support.",
     src:"/homepage/Automotive_3D.png",
     href: "/industries/automotive"
   },
@@ -519,6 +521,7 @@ const industries = [
     blurb: "Payments, ledgers, and reporting built for scrutiny.",
     examples: ["Payments & ledgers", "Reporting built for scrutiny"],
     stack: [".NET", "Java", "PostgreSQL", "AWS", "Fraud-detection models"],
+    highlight: "A user-friendly payments infrastructure that lets businesses request and receive funds through dependable intermediaries.",
     src:"/homepage/Fintech_3D.png",
     href: "/industries/fintech"
   },
@@ -528,6 +531,7 @@ const industries = [
     blurb: "Storefronts, catalogs, and order management at scale.",
     examples: ["Storefronts & catalogs", "Order management at scale"],
     stack: ["Magento", "Shopify", "WooCommerce", "Recommendation AI"],
+    highlight: "Our specialists connect you to a pool of customers by building eCommerce marketplaces that scale with demand.",
     src:"/homepage/Retail_3D.png",
     href: "/industries/retail-ecommerce"
   },
@@ -537,6 +541,7 @@ const industries = [
     blurb: "LMS platforms, portals, and student-facing apps.",
     examples: ["LMS platforms & portals", "Student-facing apps"],
     stack: ["React", "Laravel", "Flutter", "AI tutoring assistants"],
+    highlight: "We've built data-driven, bring-your-own-curriculum learning apps that improve outcomes for learners, not just engagement metrics.",
     src:"/homepage/Education_3D.png",
     href: "/industries/education"
   },
@@ -546,6 +551,7 @@ const industries = [
     blurb: "Booking engines and itinerary management systems.",
     examples: ["Booking engines", "Itinerary management"],
     stack: ["Node.js", "Vue.js", "MySQL", "Dynamic pricing AI"],
+    highlight: "A dedicated travel-apps team that changes how your business is experienced, from first search to post-trip follow-up.",
     src:"/homepage/Travel_3D.png",
     href: "/industries/travel"
   },
@@ -555,6 +561,7 @@ const industries = [
     blurb: "Secure dashboards and back-office tooling.",
     examples: ["Secure dashboards", "Back-office tooling"],
     stack: [".NET", "AWS", "Docker", "Document intelligence AI"],
+    highlight: "Our fintech specialists have built alternative-investment software spanning bonds, private equity, and corporate FDs.",
     src:"/homepage/Banking_3D.png",
     href: "/industries/banking"
   },
@@ -564,6 +571,7 @@ const industries = [
     blurb: "Fleet tracking, warehouse, and supply chain systems.",
     examples: ["Fleet tracking", "Warehouse & supply chain systems"],
     stack: ["Python", "Django", "PostgreSQL", "Route-optimization AI"],
+    highlight: "We carry a logistics build from parameterized testing through to an application that holds up under a varied, demanding user base.",
     src:"/homepage/Logistics_3D.png",
     href: "/industries/logistics"
   },
@@ -573,6 +581,7 @@ const industries = [
     blurb: "Streaming, content platforms, and audience tools.",
     examples: ["Streaming & content platforms", "Audience tools"],
     stack: ["React", "Node.js", "AWS", "Content-tagging AI"],
+    highlight: "Our product team builds interactive, audience-first experiences for the fast-growing streaming and content market.",
     src:"/homepage/Media_3D.png",
     href: "/industries/media"
   },
