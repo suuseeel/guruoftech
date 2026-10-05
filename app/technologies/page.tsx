@@ -26,7 +26,7 @@ export default function TechnologiesPage() {
         <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow-badge">Technologies</span>
-            <h1 className="mt-4 text-[clamp(2.4rem,4.8vw,4.2rem)] font-semibold leading-[1.04] tracking-tight">
+            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
               Technology we ship with <span className="text-accent">daily</span>
             </h1>
             <p className="mt-4 max-w-lg text-body-lg text-muted">

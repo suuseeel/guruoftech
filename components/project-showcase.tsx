@@ -75,8 +75,8 @@ export function ProjectShowcase({
 
               <div className="mt-4 flex flex-1 flex-col">
                 <span className="text-caption font-medium text-accent">{project.industry}</span>
-                <h3 className="text-h4 mt-1 font-semibold">{project.name}</h3>
-                <p className="text-body-sm mt-1.5 text-muted">{project.description}</p>
+                <h3 className="text-h4 mt-2 font-semibold">{project.name}</h3>
+                <p className="text-body-sm mt-2 text-muted">{project.description}</p>
 
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {project.stack.map((s) => (

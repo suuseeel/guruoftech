@@ -166,9 +166,9 @@ export function ProcessFive({ title, desc, steps }: { title: string; desc?: stri
         <Reveal className="max-w-2xl">
           <span className={eyebrowCls}>How to get started</span>
           <h2 className="text-h2 mt-4 font-semibold tracking-tight">{title}</h2>
-          {desc && <p className="mt-3 text-body text-muted">{desc}</p>}
+          {desc && <p className="mt-4 text-body text-muted">{desc}</p>}
         </Reveal>
-        <ol className="relative mt-14 grid gap-6 md:grid-cols-5">
+        <ol className="relative mt-12 grid gap-6 md:grid-cols-5">
           <div
             aria-hidden
             className="absolute left-0 right-0 top-6 hidden h-1 rounded-full bg-linear-to-r from-accent/10 via-accent to-accent-2 md:block"
@@ -180,7 +180,7 @@ export function ProcessFive({ title, desc, steps }: { title: string; desc?: stri
                   {i + 1}
                 </span>
                 <div className="mt-5 rounded-2xl border border-border bg-surface p-6">
-                  <h3 className="font-semibold leading-snug">{s}</h3>
+                  <h3 className="text-h4 font-semibold leading-snug">{s}</h3>
                 </div>
               </li>
             </Reveal>
@@ -210,7 +210,7 @@ export function TechTiles({
         <span className={eyebrowCls}>The stack</span>
         <h2 className="text-h2 mt-4 font-semibold tracking-tight">{heading}</h2>
       </Reveal>
-      <div className={`mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3 ${cols}`}>
+      <div className={`mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 ${cols}`}>
         {items.map((n, i) => (
           <Reveal key={n} delay={(i % 4) * 0.04}>
             <div className="group flex h-full flex-col items-center justify-center gap-4 rounded-2xl border border-border bg-surface px-4 py-8 text-center transition-all hover:-translate-y-1 hover:border-accent hover:shadow-lg hover:shadow-accent/10">

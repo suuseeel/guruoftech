@@ -551,6 +551,10 @@ body {
   text-wrap: balance;
 }
 
+.guru-hero-description {
+  margin-top: 16px;
+}
+
 .guru-gradient-word {
   background: linear-gradient(
     100deg,

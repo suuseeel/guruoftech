@@ -62,7 +62,7 @@ export default function CareersPage() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.25fr_1fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow-badge">Careers</span>
-            <h1 className="mt-4 text-[clamp(2.3rem,4.6vw,4rem)] font-semibold leading-[1.05] tracking-tight">
+            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
               You can level up your <span className="text-accent">career graph</span> and join the team for an
               exciting journey!
             </h1>
@@ -122,14 +122,14 @@ export default function CareersPage() {
               <div>
                 <span className="text-eyebrow font-semibold uppercase tracking-[0.2em] text-white/60">Growth</span>
                 <h2 className="text-h2 mt-4 font-semibold tracking-tight">Explore Your Growth Chart!</h2>
-                <p className="mt-5 text-body-sm text-white/75">
+                <p className="mt-4 text-body-sm text-white/75">
                   Get the best platform to use your knowledge and skills on fascinating new problems. Utilize the
                   appropriate tools to continuously learn and develop while resolving the largest issues facing
                   clients. GuruOfTech is dedicated to advancing your career, from leadership to learning. Find the
                   position that best suits you right now.
                 </p>
               </div>
-              <div className="space-y-4 text-body-sm text-white/75">
+              <div className="space-y-5 text-body-sm text-white/75">
                 <p>
                   We innovate, do the seemingly impossible, and positively impact our clients, our community, and
                   society as a whole. Together, we take risky actions, provide one another support, collaborate,

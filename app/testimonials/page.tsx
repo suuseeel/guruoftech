@@ -29,7 +29,7 @@ export default function TestimonialsPage() {
         <div className="grid items-stretch gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <Reveal className="flex flex-col justify-center">
             <span className="eyebrow-badge self-start">Clients & Testimonials</span>
-            <h1 className="mt-4 text-[clamp(2.4rem,4.8vw,4.2rem)] font-semibold leading-[1.04] tracking-tight">
+            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
               Clients and <span className="text-accent">Testimonials</span>
             </h1>
             <p className="mt-4 max-w-xl text-body-lg text-muted">
@@ -69,7 +69,7 @@ export default function TestimonialsPage() {
           <path d="M0 170 C 300 110, 520 220, 780 160 S 1220 90, 1440 160 V220 H0Z" fill="var(--accent-2)" opacity="0.12" />
           <path d="M0 200 C 320 160, 600 230, 900 190 S 1260 160, 1440 195 V220 H0Z" fill="var(--accent)" opacity="0.14" />
         </svg>
-        <div className="relative mx-auto max-w-4xl px-6 pb-40 pt-24 text-center">
+        <div className="relative mx-auto max-w-7xl px-6 pb-40 pt-24 text-center lg:px-8">
           <Reveal>
             <span className="eyebrow-badge">Testimonials</span>
             <h2 className="text-h1 mt-4 font-semibold tracking-tight">Our Marks on Their Sands</h2>

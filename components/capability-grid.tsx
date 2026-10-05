@@ -29,7 +29,7 @@ export function CapabilityGrid({
             {pill}
           </span>
         </span>
-        <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+        <h2 className="mt-4 text-h2 text-balance font-semibold tracking-tight">
           {title}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-balance text-muted">{description}</p>

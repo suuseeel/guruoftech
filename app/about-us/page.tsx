@@ -47,7 +47,7 @@ export default function AboutUsPage() {
         <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-accent/15 blur-[110px]" />
         <Reveal className="relative">
           <span className="eyebrow-badge">About Us</span>
-          <h1 className="mt-4 max-w-3xl text-[clamp(2.5rem,5.2vw,4.5rem)] font-semibold leading-[1.02] tracking-tight">
+          <h1 className="mt-4 max-w-3xl text-h1 font-semibold tracking-tight">
             About{" "}
             <span className="bg-linear-to-r from-accent to-accent-2 bg-clip-text text-transparent">
               Guru of Tech

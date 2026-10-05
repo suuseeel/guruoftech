@@ -37,8 +37,8 @@ export function JourneyTimeline({ stages }: { stages: Stage[] }) {
                 {s.step}
               </span>
               <div className="lg:mt-2">
-                <h3 className="text-base font-semibold">{s.title}</h3>
-                <p className="mt-1.5 text-sm text-muted">{s.desc}</p>
+                <h3 className="text-h4 font-semibold">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted">{s.desc}</p>
                 <div className="mt-3 flex flex-wrap gap-1.5 lg:justify-center">
                   {s.deliverables.map((d) => (
                     <span

@@ -57,7 +57,7 @@ export default function TeamPage() {
         <div className="relative grid items-end gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow-badge">Team</span>
-            <h1 className="mt-4 text-[clamp(2.4rem,5vw,4.6rem)] font-semibold leading-[1.02] tracking-tight">
+            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
               The people behind <span className="text-accent">delivery</span>
             </h1>
             <p className="mt-4 max-w-xl text-body-lg text-muted">
@@ -85,7 +85,7 @@ export default function TeamPage() {
       </section>
 
       {/* the stage */}
-      <section className="section mx-auto max-w-[92rem] px-3 sm:px-6">
+      <section className="section mx-auto max-w-[92rem] px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[2rem] bg-[#070d22] px-5 py-16 text-white ring-1 ring-white/10 sm:rounded-[3rem] sm:px-10 lg:px-16 lg:py-24">
           <div className="pointer-events-none absolute -left-32 top-0 h-[32rem] w-[32rem] rounded-full bg-accent/25 blur-[140px]" />
           <div className="pointer-events-none absolute -right-32 top-1/3 h-[32rem] w-[32rem] rounded-full bg-accent-2/20 blur-[140px]" />

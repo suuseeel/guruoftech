@@ -121,7 +121,7 @@ function TechDnaCard({
                 {title}
               </h3>
 
-              <p className="text-body-sm mt-1 leading-relaxed text-slate-700 dark:text-slate-400">
+              <p className="text-body-sm mt-2 leading-relaxed text-slate-700 dark:text-slate-400">
                 {description}
               </p>
             </div>
@@ -223,7 +223,7 @@ function AiProcessStep({
       <span className="text-xs font-semibold tracking-widest text-accent">
         STEP {String(index).padStart(2, "0")}
       </span>
-      <h4 className="mt-3 text-lg font-semibold">{title}</h4>
+      <h4 className="mt-3 text-h4 font-semibold">{title}</h4>
       <p className="mt-2 text-sm leading-relaxed text-muted">{description}</p>
     </div>
   );
@@ -909,7 +909,7 @@ export default function Home() {
             LEFT SIDE
             ===================================== */}
 
-            <div className="relative z-20 items-center flex justify-center. flex-col text-center ">
+            <div className="relative z-20 items-center flex justify-center flex-col text-center">
               <h2
                 className="guru-hero-title animate-fade-in-up"
                 style={{ animationDelay: "0.05s" }}
@@ -1153,7 +1153,7 @@ export default function Home() {
                   <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-soft text-accent">
                     <item.icon className="h-4.5 w-4.5" />
                   </span>
-                  <h3 className="text-base font-semibold">{item.title}</h3>
+                  <h3 className="text-h4 font-semibold">{item.title}</h3>
                   <p className="text-body-sm text-muted">{item.desc}</p>
                   <span className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
                     Explore <ArrowUpRight className="h-3.5 w-3.5" />

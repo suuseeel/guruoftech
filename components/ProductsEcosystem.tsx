@@ -397,7 +397,10 @@ const css = `
   90%{ opacity:1; }
   100%{ transform:translateY(-120px) translateX(20px); opacity:0; }
 }
-.pw-wrap{ position:relative; z-index:1; max-width:1440px; margin:0 auto; padding:var(--sec-y) 24px; }
+.pw-wrap{ position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:var(--sec-y) 24px; }
+@media (min-width:1024px){
+  .pw-wrap{ padding:var(--sec-y) 32px; }
+}
 
 .pw-hero{ text-align:center; max-width:760px; margin:0 auto; }
 .pw-badge{
@@ -586,7 +589,6 @@ const css = `
   .pw-orb{ max-width:170px; }
 }
 @media (max-width:640px){
-  .pw-wrap{ padding:var(--sec-y) 16px; }
   .pw-grid{ grid-template-columns:1fr; gap:16px; }
   .pw-footer{ justify-content:center; text-align:center; }
 }

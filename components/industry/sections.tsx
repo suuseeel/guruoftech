@@ -432,7 +432,7 @@ export function ProcessStepper({ title, desc, steps }: ProcessProps) {
         <Reveal>
           <ProcessHead title={title} desc={desc} center />
         </Reveal>
-        <div className="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6 lg:gap-16">
+        <div className="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-16">
           <div aria-hidden className="absolute left-0 right-0 top-6 hidden h-px bg-border lg:block" />
           {steps.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.06} className="relative">
@@ -723,7 +723,7 @@ export function RelatedIndustries({ current }: { current: string }) {
               <IndustryArt slug={p.slug} className="h-20! w-20! max-w-none! shrink-0" />
               <div className="min-w-0">
                 <h3 className="truncate font-semibold">{p.name}</h3>
-                <p className="mt-0.5 line-clamp-2 text-caption text-muted">{p.blurb}</p>
+                <p className="mt-2 line-clamp-2 text-caption text-muted">{p.blurb}</p>
               </div>
               <ArrowUpRight className="ml-auto h-4 w-4 shrink-0 text-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
             </Link>

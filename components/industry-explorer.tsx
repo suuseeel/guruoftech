@@ -86,7 +86,7 @@ export function IndustryExplorer({ industries }: { industries: Industry[] }) {
                   <h3 className="text-h4 bg-linear-to-r from-accent via-accent-strong to-accent-2 bg-clip-text font-extrabold text-transparent">
                     {current.name}
                   </h3>
-                  <p className="text-body-sm mt-1 max-w-lg text-muted">
+                  <p className="text-body-sm mt-2 max-w-lg text-muted">
                     {current.blurb}
                   </p>
                 </div>

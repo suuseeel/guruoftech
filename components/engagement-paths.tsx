@@ -44,13 +44,13 @@ export function EngagementPaths({
             {pill}
           </span>
         </span>
-        <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+        <h2 className="mt-4 text-h2 text-balance font-semibold tracking-tight">
           {title}
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-balance text-muted">{description}</p>
       </Reveal>
 
-      <div className="mt-20 grid gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-6">
+      <div className="mt-12 grid gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-6">
         {paths.map((path, i) => (
           <Reveal
             key={path.title}
@@ -69,8 +69,8 @@ export function EngagementPaths({
                 {path.icon}
               </span>
 
-              <h3 className="text-lg font-semibold leading-snug">{path.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{path.description}</p>
+              <h3 className="text-h4 font-semibold leading-snug">{path.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted">{path.description}</p>
 
               <span className="mt-auto w-full pt-6">
                 <span className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors duration-300 group-hover:bg-accent-strong">

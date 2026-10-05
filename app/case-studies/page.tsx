@@ -56,7 +56,7 @@ export default function CaseStudiesPage() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow-badge">Case Studies</span>
-            <h1 className="mt-4 text-[clamp(2.4rem,4.8vw,4.2rem)] font-semibold leading-[1.04] tracking-tight">
+            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
               Detailed write-ups, <span className="text-accent">coming soon</span>
             </h1>
             <p className="mt-4 max-w-xl text-body-lg text-muted">
@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
                 Where we&apos;ve worked
               </span>
               <h2 className="text-h2 mt-4 font-semibold tracking-tight">Industries behind these projects</h2>
-              <p className="mt-2 text-body-sm text-muted">
+              <p className="mt-4 text-body-sm text-muted">
                 Case study write-ups are on the way for each of these — start with the industry closest to yours.
               </p>
             </div>

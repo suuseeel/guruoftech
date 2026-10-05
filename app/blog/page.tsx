@@ -24,7 +24,7 @@ export default function BlogPage() {
       <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
         <Reveal className="self-start lg:sticky lg:top-28">
           <span className="eyebrow-badge">Blog</span>
-          <h1 className="mt-4 text-[clamp(2.4rem,4.8vw,4.2rem)] font-semibold leading-[1.04] tracking-tight">
+          <h1 className="mt-4 text-h1 font-semibold tracking-tight">
             We&apos;re getting the blog <span className="text-accent">ready</span>
           </h1>
           <p className="mt-4 max-w-md text-body-lg text-muted">

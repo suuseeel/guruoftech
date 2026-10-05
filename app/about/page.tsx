@@ -130,7 +130,7 @@ export default async function AboutPage() {
         </Reveal>
 
         <div className="mt-12 gap-10 ">
-          <Reveal className="space-y-4 text-body-sm text-muted">
+          <Reveal className="space-y-5 text-body-sm text-muted">
             <p>
               GuruOfTech was founded with the goal of producing cutting-edge
               technological solutions. The firm is founded by a group of
@@ -156,7 +156,7 @@ export default async function AboutPage() {
             <h3 className="text-h4 font-semibold">
               The key to moving your business into new horizons
             </h3>
-            <div className="space-y-4 text-body-sm text-muted">
+            <div className="space-y-5 text-body-sm text-muted">
               <p>
                 We assist your company&apos;s operational requirements to run more
                 smoothly with our inventive, unique IT solutions. Customization is

@@ -138,7 +138,7 @@ export default function AIPage() {
               <Sparkles className="h-3.5 w-3.5" />
               AI Solutions
             </span>
-            <h1 className="mt-4 text-[clamp(2.4rem,4.8vw,4.2rem)] font-semibold leading-[1.04] tracking-tight">
+            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
               Engineering for the <span className="text-gradient">AI era</span>
             </h1>
             <p className="mt-4 max-w-xl text-body-lg text-muted">
@@ -233,7 +233,7 @@ export default function AIPage() {
             <span className="text-eyebrow font-semibold uppercase tracking-[0.2em] text-accent">How an AI project runs</span>
             <h2 className="text-h2 mt-4 font-semibold tracking-tight">From idea to something people use</h2>
           </Reveal>
-          <ol className="relative mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="relative mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {aiProcess.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.06}>
                 <li className="h-full rounded-2xl border border-border bg-surface p-6">
@@ -257,7 +257,7 @@ export default function AIPage() {
         <Reveal className="max-w-2xl">
           <span className="text-eyebrow font-semibold uppercase tracking-[0.2em] text-accent">Our approach</span>
           <h2 className="text-h2 mt-4 font-semibold tracking-tight">AI, used responsibly</h2>
-          <p className="mt-3 text-body text-muted">
+          <p className="mt-4 text-body text-muted">
             A few ground rules we hold to on every engagement that touches AI or automation.
           </p>
         </Reveal>
