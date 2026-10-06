@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const offerings = [
   { icon: FileText, title: "CMS Development", desc: "Our team of committed CMS developers is skilled in creating distinctive and feature-rich sites that help you easily build an online presence for various industry verticals." },
   { icon: LayoutTemplate, title: "Drupal Development", desc: "Hire CMS programmers with expertise in creating scalable, affordable Drupal solutions that work flawlessly across devices." },
-  { icon: Store, title: "Sitecore eCommerce Services", desc: "Employ CMS programmers with expertise in creating scalable, affordable Sitecore shops that function flawlessly on all devices." },
+  { icon: Store, title: "Sitecore Development", desc: "Employ CMS programmers with expertise in creating scalable, affordable Sitecore sites that function flawlessly on all devices." },
   { icon: Wrench, title: "Joomla Development", desc: "In order to meet the specific requirements of your company, our CMS developers offer bespoke CMS development services." },
 ];
 

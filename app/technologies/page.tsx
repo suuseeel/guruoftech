@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
   title: "Technologies",
   description:
-    brandText("The backend, frontend, mobile, CMS, eCommerce, cloud, and database technology stack Guru of Tech builds with.", brand),
+    brandText("The backend, frontend, mobile, CMS, cloud, and database technology stack Guru of Tech builds with.", brand),
   };
 }
 
@@ -26,7 +26,7 @@ export default function TechnologiesPage() {
         <div className="relative grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow-badge">Technologies</span>
-            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
+            <h1 className="mt-4 text-h2 font-semibold tracking-tight">
               Technology we ship with <span className="text-accent">daily</span>
             </h1>
             <p className="mt-4 max-w-lg text-body-lg text-muted">

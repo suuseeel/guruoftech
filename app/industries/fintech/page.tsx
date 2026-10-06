@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { getRequestBrand } from "@/lib/brand-server";
 import { brandText } from "@/lib/brand";
-import { CreditCard, Landmark, Smartphone, Wallet } from "lucide-react";
+import { CreditCard, FileSearch, Landmark, ScanLine, Smartphone, Wallet } from "lucide-react";
 import { HeroSplit } from "@/components/industry/hero";
 import {
+  AIOpportunities,
   BodyDropcap,
   CtaImage,
   OfferBento,
   ProcessTimeline,
   RelatedIndustries,
+  ScenarioCard,
   StatsGradient,
 } from "@/components/industry/sections";
 
@@ -72,11 +74,26 @@ const copy = {
   ],
 };
 
+const aiOpportunities = [
+  { icon: ScanLine, title: "Fraud-detection models", desc: "Score transactions in real time against usage patterns, instead of catching fraud after the chargeback arrives." },
+  { icon: FileSearch, title: "Automated KYC & document checks", desc: "Pre-screen onboarding documents so the compliance team only reviews the applications that actually need a human judgment call." },
+  { icon: Landmark, title: "Credit risk scoring", desc: "Model-based risk signals that support an underwriter's decision rather than replace it." },
+];
+
 export default function FintechPage() {
   return (
     <>
       <HeroSplit {...copy} reverse />
       <OfferBento offerings={offerings} />
+      <AIOpportunities
+        title="Where AI fits into FinTech software"
+        desc="Payments and lending apps generate exactly the kind of transaction data these features need to work well."
+        items={aiOpportunities}
+      />
+      <ScenarioCard
+        title="Pre-screening merchant onboarding"
+        scenario="A payments platform was manually reviewing every new-merchant application end to end. An automated document-verification step pre-screens the straightforward approvals, so the compliance team spends its time on the applications that actually need a human judgment call."
+      />
       <BodyDropcap paragraphs={copy.paragraphs} />
       <StatsGradient />
       <ProcessTimeline

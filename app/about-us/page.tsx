@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
   title: "About Us",
   description:
-    brandText("GuruOfTech is a globally recognized Web Development Company offering trustworthy and reliable Software Development, Software Outsourcing, eCommerce, Analytics, and DevOps Services.", brand),
+    brandText("GuruOfTech is a globally recognized Web Development Company offering trustworthy and reliable Software Development, Software Outsourcing, AI, Analytics, and DevOps Services.", brand),
   };
 }
 
@@ -47,7 +47,7 @@ export default function AboutUsPage() {
         <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-accent/15 blur-[110px]" />
         <Reveal className="relative">
           <span className="eyebrow-badge">About Us</span>
-          <h1 className="mt-4 max-w-3xl text-h1 font-semibold tracking-tight">
+          <h1 className="mt-4 max-w-3xl text-h2 font-semibold tracking-tight">
             About{" "}
             <span className="bg-linear-to-r from-accent to-accent-2 bg-clip-text text-transparent">
               Guru of Tech
@@ -61,7 +61,7 @@ export default function AboutUsPage() {
               <Quote className="absolute -bottom-3 right-6 h-24 w-24 text-accent/10" />
               <p className="relative pb-6 text-[clamp(1.1rem,1.6vw,1.4rem)] leading-relaxed text-foreground/90">
                 We are a globally recognized Web Development Company offering trustworthy and reliable
-                Software Development, Software Outsourcing, eCommerce, Analytics, and DevOps Services.
+                Software Development, Software Outsourcing, AI, Analytics, and DevOps Services.
                 We have a team of highly talented professional developers in various technologies. We
                 aim to deliver our customers the best and most customized web solutions.
               </p>

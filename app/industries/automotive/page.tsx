@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { getRequestBrand } from "@/lib/brand-server";
 import { brandText } from "@/lib/brand";
-import { Cloud, GraduationCap, Network, ShieldCheck } from "lucide-react";
+import { Cloud, Gauge, GraduationCap, Network, ShieldCheck, Wrench } from "lucide-react";
 import { HeroSplit } from "@/components/industry/hero";
 import {
+  AIOpportunities,
   BodySidebar,
   CtaBar,
   OfferRows,
   ProcessStepper,
   RelatedIndustries,
+  ScenarioCard,
   StatsStrip,
 } from "@/components/industry/sections";
 
@@ -72,12 +74,27 @@ const copy = {
   ],
 };
 
+const aiOpportunities = [
+  { icon: Gauge, title: "Predictive maintenance alerts", desc: "Flag vehicles likely to need service soon based on usage data, before the customer notices a problem." },
+  { icon: Wrench, title: "AI service advisor", desc: "A pre-qualification assistant that gathers symptoms before a human advisor gets involved, so the bay visit starts with a diagnosis already in hand." },
+  { icon: Cloud, title: "Demand forecasting for parts", desc: "Predict which parts and inventory a dealership will need, instead of reacting after a shelf runs empty." },
+];
+
 export default function AutomotivePage() {
   return (
     <>
       <HeroSplit {...copy} />
       <BodySidebar paragraphs={copy.paragraphs} />
       <OfferRows offerings={offerings} />
+      <AIOpportunities
+        title="Where AI fits into automotive software"
+        desc="On top of IT operations and process standardization, these are the AI features that move the needle fastest."
+        items={aiOpportunities}
+      />
+      <ScenarioCard
+        title="Leveling out the service bay schedule"
+        scenario="A multi-location dealer group wanted service bays booked more evenly across the week instead of everyone defaulting to Saturday morning. A booking assistant nudges customers toward under-booked slots using live bay-capacity data, smoothing out the week without anyone having to call around."
+      />
       <StatsStrip />
       <ProcessStepper
         title="Our Methodology for Developing Automotive Industry Solutions"

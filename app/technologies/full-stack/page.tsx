@@ -44,7 +44,6 @@ export default function FullStackPage() {
           "Enterprise-Grade Website Development",
           "Full Stack Support & Maintenance",
           "ERP Development",
-          "E-commerce Solutions",
           "Custom Web Applications",
           "Integration, Porting, Migration",
         ]}

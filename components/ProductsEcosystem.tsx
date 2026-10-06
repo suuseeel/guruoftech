@@ -597,7 +597,7 @@ const css = `
    LIGHT THEME
    Everything above is the dark look (this component's original
    default). The app toggles themes by adding/removing a "dark"
-   class on <html> (see components/theme-toggle.tsx) — so light
+   class on <html> (see components/theme-provider.tsx) — so light
    mode is simply "html without that class". Re-pointing the
    custom properties on .pw-root covers every rule that already
    reads them; the rules below handle the handful that use a

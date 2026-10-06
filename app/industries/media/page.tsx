@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { getRequestBrand } from "@/lib/brand-server";
 import { brandText } from "@/lib/brand";
-import { Contact, Lightbulb, Lock, Mic, Music, Newspaper, Video, Wrench } from "lucide-react";
+import { Contact, Lightbulb, Lock, Mic, MessageSquareWarning, Music, Newspaper, Tags, UserMinus, Video, Wrench } from "lucide-react";
 import { HeroOrbit } from "@/components/industry/hero";
 import {
+  AIOpportunities,
   BodyTwoCol,
   CtaImage,
   OfferStagger,
   ProcessLabelsStrip,
   RelatedIndustries,
+  ScenarioCard,
   StatsCircles,
 } from "@/components/industry/sections";
 
@@ -64,12 +66,27 @@ const copy = {
   ],
 };
 
+const aiOpportunities = [
+  { icon: Tags, title: "Content tagging", desc: "Auto-tag video and audio for search and recommendations, instead of a manual metadata backlog." },
+  { icon: UserMinus, title: "Churn prediction", desc: "Flag subscribers likely to cancel based on viewing drop-off, early enough for a win-back offer to actually land." },
+  { icon: MessageSquareWarning, title: "Automated content moderation", desc: "Pre-screen user-generated comments and uploads, so the moderation team reviews the edge cases instead of everything." },
+];
+
 export default function MediaPage() {
   return (
     <>
       <HeroOrbit {...copy} />
       <BodyTwoCol paragraphs={copy.paragraphs} />
       <OfferStagger offerings={offerings} />
+      <AIOpportunities
+        title="Where AI fits into media & entertainment software"
+        desc="Beyond the streaming and content platforms above, these are the features that protect retention and moderation workload."
+        items={aiOpportunities}
+      />
+      <ScenarioCard
+        title="Catching cancellations two weeks out"
+        scenario="A streaming platform only found out about cancellations after they happened. A churn-risk model built on viewing drop-off patterns flags at-risk subscribers two weeks out — early enough for a win-back offer to actually land before they cancel."
+      />
       <StatsCircles />
       <ProcessLabelsStrip title="Our Process" steps={steps} />
       <CtaImage title="Building a media or entertainment product?" image={copy.image} />

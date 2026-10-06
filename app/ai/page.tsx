@@ -138,7 +138,7 @@ export default function AIPage() {
               <Sparkles className="h-3.5 w-3.5" />
               AI Solutions
             </span>
-            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
+            <h1 className="mt-4 text-h2 font-semibold tracking-tight">
               Engineering for the <span className="text-gradient">AI era</span>
             </h1>
             <p className="mt-4 max-w-xl text-body-lg text-muted">

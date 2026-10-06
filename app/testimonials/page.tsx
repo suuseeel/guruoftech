@@ -29,7 +29,7 @@ export default function TestimonialsPage() {
         <div className="grid items-stretch gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <Reveal className="flex flex-col justify-center">
             <span className="eyebrow-badge self-start">Clients & Testimonials</span>
-            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
+            <h1 className="mt-4 text-h2 font-semibold tracking-tight">
               Clients and <span className="text-accent">Testimonials</span>
             </h1>
             <p className="mt-4 max-w-xl text-body-lg text-muted">
@@ -72,7 +72,7 @@ export default function TestimonialsPage() {
         <div className="relative mx-auto max-w-7xl px-6 pb-40 pt-24 text-center lg:px-8">
           <Reveal>
             <span className="eyebrow-badge">Testimonials</span>
-            <h2 className="text-h1 mt-4 font-semibold tracking-tight">Our Marks on Their Sands</h2>
+            <h2 className="text-h2 mt-4 font-semibold tracking-tight">Our Marks on Their Sands</h2>
             <p className="mx-auto mt-4 max-w-2xl text-body-lg text-muted">
               Learn how GuruOfTech is transforming the game for international clients to operate and succeed
               in this technology-driven era through services, solutions, and success models.

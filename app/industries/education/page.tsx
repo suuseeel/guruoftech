@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import { getRequestBrand } from "@/lib/brand-server";
 import { brandText } from "@/lib/brand";
-import { BookOpen, Contact, GraduationCap, Lightbulb, Lock, Sparkles, Users, Wrench } from "lucide-react";
+import { BookOpen, ClipboardCheck, Contact, GraduationCap, Lightbulb, Lock, Sparkles, UserMinus, Users, Wrench } from "lucide-react";
 import { HeroEditorial } from "@/components/industry/hero";
 import { toClientOfferings } from "@/components/industry/serialize";
 import { OfferAccordion } from "@/components/industry/interactive";
 import {
+  AIOpportunities,
   BodyLead,
   CtaBar,
   ProcessLabelsRow,
   RelatedIndustries,
+  ScenarioCard,
   StatsTiles,
 } from "@/components/industry/sections";
 
@@ -66,12 +68,27 @@ const copy = {
   ],
 };
 
+const aiOpportunities = [
+  { icon: Sparkles, title: "AI tutoring assistants", desc: "A step beyond a static LMS — an assistant that answers a learner's question in the moment instead of making them wait for office hours." },
+  { icon: ClipboardCheck, title: "Automated grading assistance", desc: "Pre-score objective and short-answer work, and flag the edge cases that actually need a human to look at them." },
+  { icon: UserMinus, title: "Early dropout-risk flags", desc: "Surface students whose engagement is dropping before it becomes a pattern, not after they've already missed a month." },
+];
+
 export default function EducationPage() {
   return (
     <>
       <HeroEditorial {...copy} index="05" />
       <BodyLead paragraphs={copy.paragraphs} />
       <OfferAccordion offerings={toClientOfferings(offerings)} heading="Learning products we build" />
+      <AIOpportunities
+        title="Where AI fits into education software"
+        desc="On top of the LMS and portal work above, this is where a focused AI feature changes outcomes, not just engagement metrics."
+        items={aiOpportunities}
+      />
+      <ScenarioCard
+        title="Flagging disengagement before it becomes dropout"
+        scenario="An online course provider noticed engagement drop-off wasn't visible until a student had already missed several weeks. A simple risk score based on login and submission patterns flags it after the first missed week instead, early enough for an instructor to actually reach out."
+      />
       <StatsTiles />
       <ProcessLabelsRow title="Our Process" steps={steps} />
       <CtaBar title="Building an eLearning product?" />

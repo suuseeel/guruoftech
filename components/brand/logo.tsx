@@ -2,9 +2,12 @@ import Image from "next/image";
 import { useBrand } from "./context";
 
 /**
- * Renders the active brand's real logo image when it has one (TechLightz),
- * or a letter-badge + wordmark fallback (GuruOfTech, and any future brand
- * that hasn't supplied a logo file yet).
+ * Renders the active brand's real logo. Three tiers:
+ *  1. logoImage — a self-contained file with the wordmark baked in
+ *     (TechLightz): rendered alone, no separate text.
+ *  2. iconImage — an icon-only mark (GuruOfTech): rendered in the badge
+ *     slot next to the brand name text.
+ *  3. Neither supplied yet: a gradient letter badge + wordmark fallback.
  */
 export function BrandLogo({ variant = "header" }: { variant?: "header" | "footer" }) {
   const brand = useBrand();
@@ -25,15 +28,19 @@ export function BrandLogo({ variant = "header" }: { variant?: "header" | "footer
   const badgeSize = variant === "header" ? "h-9 w-9 text-base" : "h-8 w-8 text-sm";
   return (
     <span className="flex items-center gap-2.5">
-      <span
-        style={{ background: `linear-gradient(135deg, ${brand.accentFrom}, ${brand.accentTo})` }}
-        className={`flex shrink-0 items-center justify-center rounded-lg font-bold text-white shadow-sm ${badgeSize}`}
-      >
-        {brand.logoLetter}
-      </span>
-      <span className={variant === "header" ? "text-lg font-semibold tracking-tight" : "text-lg font-semibold tracking-tight"}>
-        {brand.name}
-      </span>
+      {brand.iconImage ? (
+        <span className={`relative flex shrink-0 overflow-hidden rounded-lg bg-white p-1 shadow-sm ${badgeSize}`}>
+          <Image src={brand.iconImage} alt={brand.name} fill priority className="object-contain p-0.5" />
+        </span>
+      ) : (
+        <span
+          style={{ background: `linear-gradient(135deg, ${brand.accentFrom}, ${brand.accentTo})` }}
+          className={`flex shrink-0 items-center justify-center rounded-lg font-bold text-white shadow-sm ${badgeSize}`}
+        >
+          {brand.logoLetter}
+        </span>
+      )}
+      <span className="text-lg font-semibold tracking-tight">{brand.name}</span>
     </span>
   );
 }

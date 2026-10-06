@@ -31,7 +31,7 @@ export default function ContactPage() {
             <span className="inline-flex self-start rounded-full border border-white/20 px-4 py-1.5 text-eyebrow font-medium uppercase tracking-[0.25em] text-white/80">
               Contact
             </span>
-            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
+            <h1 className="mt-4 text-h2 font-semibold tracking-tight">
               Tell us what you&apos;re building
             </h1>
             <p className="mt-4 max-w-sm text-body text-white/70">

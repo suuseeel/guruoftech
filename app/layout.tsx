@@ -6,7 +6,7 @@ import { BackgroundFX } from "@/components/background-fx";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
-import { ChatWidget } from "@/components/chatbot/chat-widget";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 import { Toaster } from "@/components/toaster";
 import { BrandProvider } from "@/components/brand/context";
 import { getRequestBrand } from "@/lib/brand-server";
@@ -50,7 +50,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
-            <ChatWidget />
+            <WhatsAppButton />
             <Toaster />
           </ThemeProvider>
         </BrandProvider>

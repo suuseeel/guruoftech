@@ -24,7 +24,7 @@ export const industriesMeta: IndustryMeta[] = [
   { slug: "healthcare", name: "Healthcare", blurb: "Patient portals, scheduling, and compliant record systems.", image: "/homepage/Healthcare_3D.png", icon: HeartPulse, href: "/industries/healthcare" },
   { slug: "automotive", name: "Automotive", blurb: "Dealer platforms, inventory, and service booking tools.", image: "/homepage/Automotive_3D.png", icon: Car, href: "/industries/automotive" },
   { slug: "fintech", name: "FinTech", blurb: "Payments, ledgers, and reporting built for scrutiny.", image: "/homepage/Fintech_3D.png", icon: Banknote, href: "/industries/fintech" },
-  { slug: "retail-ecommerce", name: "Retail & eCommerce", blurb: "Storefronts, catalogs, and order management at scale.", image: "/homepage/Retail_3D.png", icon: ShoppingBag, href: "/industries/retail-ecommerce" },
+  { slug: "retail-ecommerce", name: "Retail", blurb: "Inventory, POS, and store operations at scale.", image: "/homepage/Retail_3D.png", icon: ShoppingBag, href: "/industries/retail-ecommerce" },
   { slug: "education", name: "Education & eLearning", blurb: "LMS platforms, portals, and student-facing apps.", image: "/homepage/Education_3D.png", icon: GraduationCap, href: "/industries/education" },
   { slug: "travel", name: "Travel & Tourism", blurb: "Booking engines and itinerary management systems.", image: "/homepage/Travel_3D.png", icon: Plane, href: "/industries/travel" },
   { slug: "banking", name: "Banking & Financial Services", blurb: "Secure dashboards and back-office tooling.", image: "/homepage/Banking_3D.png", icon: Landmark, href: "/industries/banking" },

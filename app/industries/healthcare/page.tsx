@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import { getRequestBrand } from "@/lib/brand-server";
 import { brandText } from "@/lib/brand";
-import { CalendarClock, FileHeart, ShieldCheck, Sparkles } from "lucide-react";
+import { BadgeCheck, BellOff, CalendarClock, FileHeart, FileText, ShieldCheck, Sparkles } from "lucide-react";
 import { HeroSplit } from "@/components/industry/hero";
-import { CtaPanel, OfferRows, RelatedIndustries, StatsStrip } from "@/components/industry/sections";
+import {
+  AIOpportunities,
+  CtaPanel,
+  OfferRows,
+  RelatedIndustries,
+  ScenarioCard,
+  StatsStrip,
+} from "@/components/industry/sections";
 
 export async function generateMetadata(): Promise<Metadata> {
   const brand = await getRequestBrand();
@@ -20,6 +27,12 @@ const offerings = [
   { icon: ShieldCheck, title: "Secure, confidential by default", desc: "The same NDA and strict data-handling standard we apply on every project." },
 ];
 
+const aiOpportunities = [
+  { icon: BellOff, title: "No-show prediction", desc: "Flag appointments likely to be missed so staff can double-book the slot or follow up ahead of time." },
+  { icon: FileText, title: "Clinical note summarization", desc: "Turn long visit notes into a structured summary the next clinician can actually read in a minute." },
+  { icon: BadgeCheck, title: "Insurance eligibility checks", desc: "Cross-check a patient's coverage the night before a visit, instead of at the front desk during check-in." },
+];
+
 export default function HealthcarePage() {
   return (
     <>
@@ -30,6 +43,15 @@ export default function HealthcarePage() {
         intro="Patient portals, scheduling, and compliant record systems. A fuller write-up for this page is on the way."
       />
       <OfferRows offerings={offerings} />
+      <AIOpportunities
+        title="Where AI fits into healthcare software"
+        desc="Beyond triage, here's where a focused AI feature tends to pay for itself fastest."
+        items={aiOpportunities}
+      />
+      <ScenarioCard
+        title="Catching insurance issues before check-in"
+        scenario="A multi-location clinic was losing staff hours to insurance back-and-forth at the front desk. Running an AI eligibility check the night before each appointment flags coverage issues early, so the front desk resolves them before the patient walks in instead of during check-in."
+      />
       <StatsStrip />
       <CtaPanel title="Building a healthcare product?" />
       <RelatedIndustries current="healthcare" />

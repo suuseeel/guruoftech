@@ -275,7 +275,7 @@ const scenes: Record<string, ReactNode> = {
 
 const alias: Record<string, string> = {
   "retail-ecommerce": "retail",
-  Healthcare: "healthcare", Automotive: "automotive", Fintech: "fintech", FinTech: "fintech", "Retail & eCommerce": "retail",
+  Healthcare: "healthcare", Automotive: "automotive", Fintech: "fintech", FinTech: "fintech", "Retail & eCommerce": "retail", Retail: "retail",
   Education: "education", "Education & eLearning": "education", "Travel & Tourism": "travel",
   "Banking & Financial Services": "banking", Logistics: "logistics", "Logistics & Transportation": "logistics",
   "Media & Entertainment": "media",

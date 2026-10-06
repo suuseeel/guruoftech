@@ -310,6 +310,68 @@ export function OfferStagger({ offerings }: OfferProps) {
 }
 
 /* ------------------------------------------------------------------ */
+/* AI opportunities + illustrative scenario                            */
+/* ------------------------------------------------------------------ */
+
+/** Concrete "where AI fits" ideas for this industry — distinct accent-2
+ *  treatment so it reads as a different kind of section than the core
+ *  offerings grid above it. */
+export function AIOpportunities({
+  title,
+  desc,
+  items,
+}: {
+  title: string;
+  desc?: string;
+  items: Offering[];
+}) {
+  return (
+    <Wrap>
+      <Reveal className="max-w-2xl">
+        <span className="text-eyebrow flex items-center gap-1.5 font-semibold uppercase tracking-[0.2em] text-accent-2">
+          Where AI fits
+        </span>
+        <h2 className="text-h2 mt-4 font-semibold tracking-tight">{title}</h2>
+        {desc && <p className="mt-4 text-body text-muted">{desc}</p>}
+      </Reveal>
+      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((item, i) => (
+          <Reveal key={item.title} delay={i * 0.05}>
+            <div className="h-full rounded-2xl border border-accent-2/20 bg-accent-2/5 p-6">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-2/15 text-accent-2">
+                <item.icon className="h-5 w-5" />
+              </span>
+              <h3 className="text-h4 mt-4 font-semibold">{item.title}</h3>
+              <p className="mt-2 text-body-sm text-muted">{item.desc}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </Wrap>
+  );
+}
+
+/** A single concrete, named scenario showing the AI capability in action —
+ *  explicitly labeled illustrative (dashed border matches the "honest
+ *  placeholder" language already used on /case-studies) rather than
+ *  presented as a real past client result. */
+export function ScenarioCard({ title, scenario }: { title: string; scenario: string }) {
+  return (
+    <Wrap>
+      <Reveal>
+        <div className="rounded-3xl border border-dashed border-border bg-surface/60 p-8 sm:p-10">
+          <span className="text-caption font-semibold uppercase tracking-widest text-muted">
+            Illustrative example — not a real client
+          </span>
+          <h3 className="text-h3 mt-3 font-semibold">{title}</h3>
+          <p className="mt-3 max-w-2xl text-body-sm text-muted">{scenario}</p>
+        </div>
+      </Reveal>
+    </Wrap>
+  );
+}
+
+/* ------------------------------------------------------------------ */
 /* Stats                                                               */
 /* ------------------------------------------------------------------ */
 

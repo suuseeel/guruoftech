@@ -95,7 +95,7 @@ export default function IndustriesPage() {
         <div className="relative grid items-center gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow-badge">Industries</span>
-            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
+            <h1 className="mt-4 text-h2 font-semibold tracking-tight">
               Nine industries.
               <br />
               <span className="bg-linear-to-r from-accent to-accent-2 bg-clip-text text-transparent">

@@ -875,6 +875,7 @@
 "use client";
 
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import Image from "next/image";
 import "./TechnologyDNA.css";
 import { useBrand } from "@/components/brand/context";
 
@@ -900,8 +901,9 @@ import {
   SiDjango,
   SiPostgresql,
   SiFirebase,
-  SiShopify,
   SiWordpress,
+  SiDrupal,
+  SiJoomla,
   SiDocker,
   SiClaude,
   SiGooglegemini,
@@ -913,7 +915,7 @@ import {
 } from "react-icons/si";
 
 import { RiOpenaiFill } from "react-icons/ri";
-import { FaAws, FaMagento, FaJava } from "react-icons/fa6";
+import { FaAws, FaJava } from "react-icons/fa6";
 
 const useIsoLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -975,9 +977,9 @@ const tech: TechnologyData = {
   ],
 
   commerce: [
-    { name: "Shopify", Icon: SiShopify, color: "#95BF47" },
-    { name: "Magento", Icon: FaMagento, color: "#EE672F" },
     { name: "WordPress", Icon: SiWordpress, color: "#21A0D2" },
+    { name: "Drupal", Icon: SiDrupal, color: "#0678BE" },
+    { name: "Joomla", Icon: SiJoomla, color: "#5091CD" },
   ],
 
   cloud: [
@@ -1126,8 +1128,13 @@ function CenterCore() {
       <div className="tdna-orbit orbit-c" />
 
       <div className="tdna-core-circle">
-        <div className="tdna-g-logo">{brand.logoLetter}</div>
-        <div className="tdna-core-name">{brand.name}</div>
+        {brand.iconImage || brand.logoImage ? (
+          <div className="tdna-logo-img">
+            <Image src={brand.iconImage ?? brand.logoImage!} alt={brand.name} fill className="object-contain p-2" />
+          </div>
+        ) : (
+          <div className="tdna-g-logo">{brand.logoLetter}</div>
+        )}
       </div>
     </div>
   );
@@ -1340,8 +1347,8 @@ export default function TechnologyDNA() {
             id="commerce"
             className="card-slot-bottom-left"
             icon={<ShoppingCart />}
-            title="Commerce & CMS"
-            description="Build. Sell. Grow."
+            title="CMS"
+            description="Content, built to manage."
             items={tech.commerce}
           />
 

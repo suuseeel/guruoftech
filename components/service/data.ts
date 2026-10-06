@@ -9,8 +9,6 @@ import {
   Layers3,
   Rocket,
   Server,
-  ShoppingBag,
-  ShoppingCart,
   Smartphone,
   type LucideIcon,
 } from "lucide-react";
@@ -54,16 +52,6 @@ export const servicesMeta: ServiceMeta[] = [
     href: "/services/software-development",
     tags: ["Product Development", "Enterprise", "Offshore", "Nearshore", "Digital Transformation"],
     art: "dev",
-  },
-  {
-    slug: "ecommerce-development",
-    title: "eCommerce Development",
-    short:
-      "We provide bespoke eCommerce development services for various business models and avoid being tied to specific eCommerce platforms.",
-    icon: ShoppingCart,
-    href: "/services/ecommerce-development",
-    tags: ["B2B", "B2C", "Consulting", "Supply Chain Automation", "Order Management"],
-    art: "commerce",
   },
   {
     slug: "mobile-app-development",
@@ -146,14 +134,6 @@ export const techMeta: TechMeta[] = [
     icon: FileText,
     href: "/technologies/cms",
     items: ["WordPress", "Drupal", "Sitecore", "Joomla"],
-  },
-  {
-    slug: "ecommerce",
-    title: "eCommerce",
-    short: "eCommerce websites tailored to your business needs on Magento, Shopify, and WooCommerce.",
-    icon: ShoppingBag,
-    href: "/technologies/ecommerce",
-    items: ["Magento", "Shopify", "WooCommerce"],
   },
   {
     slug: "full-stack",

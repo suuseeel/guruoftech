@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import { getRequestBrand } from "@/lib/brand-server";
 import { brandText } from "@/lib/brand";
-import { Contact, Handshake, Lightbulb, LineChart, Lock, PiggyBank, Wallet, Wrench } from "lucide-react";
+import { Contact, FileStack, Handshake, Lightbulb, LineChart, Lock, PiggyBank, ShieldAlert, Wallet, Wrench } from "lucide-react";
 import { HeroBanner } from "@/components/industry/hero";
 import { toClientOfferings } from "@/components/industry/serialize";
 import { OfferTabs } from "@/components/industry/interactive";
 import {
+  AIOpportunities,
   BodyCard,
   CtaImage,
   ProcessLabelsGrid,
   RelatedIndustries,
+  ScenarioCard,
   StatsBand,
 } from "@/components/industry/sections";
 
@@ -65,12 +67,27 @@ const copy = {
   ],
 };
 
+const aiOpportunities = [
+  { icon: ShieldAlert, title: "Anomaly detection on transactions", desc: "Surface unusual account activity for review automatically, instead of relying on a customer to notice and report it first." },
+  { icon: FileStack, title: "Document intelligence", desc: "Extract the fields that matter from statements and forms, instead of a back-office team retyping them by hand." },
+  { icon: LineChart, title: "Automated compliance reporting", desc: "Pull required fields from source systems into a ready-to-review report, instead of assembling one by hand each cycle." },
+];
+
 export default function BankingPage() {
   return (
     <>
       <HeroBanner {...copy} chips={offerings.map((o) => o.title)} />
       <BodyCard paragraphs={copy.paragraphs} />
       <OfferTabs offerings={toClientOfferings(offerings)} heading="Financial products we build" />
+      <AIOpportunities
+        title="Where AI fits into banking software"
+        desc="Alongside the financial products above, these are the back-office features that save the most hours."
+        items={aiOpportunities}
+      />
+      <ScenarioCard
+        title="Turning a two-day report into a same-day one"
+        scenario="A back-office team spent two days every month assembling a compliance report by hand from five different systems. An automated pull-and-format step turns that into a same-day review, with the team checking the output instead of building it from scratch."
+      />
       <StatsBand />
       <ProcessLabelsGrid title="Our Process" steps={steps} />
       <CtaImage title="Building a banking or finance product?" image={copy.image} />

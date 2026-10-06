@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
   title: "Services",
   description:
-    brandText("Software development, eCommerce, mobile apps, analytics and DevOps, testing, and startup consulting from Guru of Tech.", brand),
+    brandText("Software development, mobile apps, analytics and DevOps, testing, and startup consulting from Guru of Tech.", brand),
   };
 }
 
@@ -26,7 +26,7 @@ export default function ServicesPage() {
         <div className="relative grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow-badge">Services</span>
-            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
+            <h1 className="mt-4 text-h2 font-semibold tracking-tight">
               Services built around <span className="text-accent">outcomes</span>
             </h1>
             <p className="mt-4 max-w-xl text-body-lg text-muted">

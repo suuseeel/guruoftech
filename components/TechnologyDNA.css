@@ -952,6 +952,19 @@
     600;
 }
 
+.tdna-logo-img {
+  position: relative;
+
+  width: 76px;
+  height: 76px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow: 0 0 20px rgba(83, 112, 255, 0.7);
+}
+
 
 /* =========================================================
    ORBIT LIGHTS

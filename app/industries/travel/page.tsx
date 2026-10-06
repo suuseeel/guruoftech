@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Contact, Lightbulb, Lock, Plug, Repeat, Smartphone, Wrench, MessagesSquare } from "lucide-react";
+import { Contact, Headphones, Lightbulb, Lock, Plug, Repeat, Route, Smartphone, Wrench, MessagesSquare } from "lucide-react";
 import { HeroSplit } from "@/components/industry/hero";
 import {
+  AIOpportunities,
   BodyCard,
   CtaPanel,
   OfferStagger,
   ProcessLabelsRow,
   RelatedIndustries,
+  ScenarioCard,
   StatsTiles,
 } from "@/components/industry/sections";
 
@@ -42,12 +44,27 @@ const copy = {
   ],
 };
 
+const aiOpportunities = [
+  { icon: Route, title: "Itinerary recommendations", desc: "Suggest add-ons and activities based on a traveler's actual trip details, not a generic upsell list." },
+  { icon: Headphones, title: "Support ticket triage", desc: "Route travel-disruption queries — cancellations, rebooking — to the right queue automatically, instead of a first-come-first-served inbox." },
+  { icon: Plug, title: "Dynamic pricing", desc: "Adjust pricing based on demand and availability signals in real time, rather than a fixed seasonal calendar." },
+];
+
 export default function TravelPage() {
   return (
     <>
       <HeroSplit {...copy} reverse />
       <BodyCard paragraphs={copy.paragraphs} />
       <OfferStagger offerings={offerings} />
+      <AIOpportunities
+        title="Where AI fits into travel software"
+        desc="These are the features that matter most once the booking engine itself is working."
+        items={aiOpportunities}
+      />
+      <ScenarioCard
+        title="Separating urgent from routine during a disruption"
+        scenario="A booking platform's support queue got flooded every time a route was disrupted. An AI triage step separates 'needs a human right now' from 'can wait for a batched update,' so an urgent rebooking doesn't sit behind routine questions in the same queue."
+      />
       <StatsTiles />
       <ProcessLabelsRow title="The Process Supporting Your Needs" steps={steps} />
       <CtaPanel title="Building a travel product?" />

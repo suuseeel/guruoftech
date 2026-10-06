@@ -20,16 +20,22 @@ export type Brand = {
   legalName: string;
   domain: string;
   description: string;
-  /** Real logo file in /public, if this brand has one. */
+  /** Real self-contained logo file in /public (icon + wordmark baked into
+   *  one image), if this brand has one. Rendered alone, no separate text. */
   logoImage?: string;
+  /** Icon-only mark in /public, if this brand has one. Rendered next to the
+   *  brand name text (unlike logoImage, which replaces the text entirely). */
+  iconImage?: string;
   /** Square favicon in /public, always present. */
   favicon: string;
-  /** Fallback mark shown when there's no logoImage (letter + gradient). */
+  /** Fallback mark shown when there's no logoImage/iconImage (letter + gradient). */
   logoLetter: string;
   accentFrom: string;
   accentTo: string;
   /** Inbox that contact-form submissions for this brand are sent to. */
   contactEmail: string;
+  /** WhatsApp contact number, digits only with country code (no +), e.g. "919312166668". */
+  whatsapp: string;
   socials?: { twitter?: string; linkedin?: string; facebook?: string };
 };
 
@@ -41,12 +47,14 @@ const brands: Record<BrandKey, Brand> = {
     legalName: "Guru of Tech",
     domain: "guruoftech.com",
     description:
-      "Guru of Tech is a full-stack software development company building web platforms, mobile apps, and e-commerce products for businesses across the globe.",
-    favicon: "/favicon-guruoftech.svg",
+      "Guru of Tech is a full-stack software development company building web platforms, mobile apps, and AI-driven products for businesses across the globe.",
+    iconImage: "/GURUOFTECH-LOGO.png",
+    favicon: "/favicon-guruoftech-white.png",
     logoLetter: "G",
     accentFrom: "#2f5df5",
     accentTo: "#1a3fd6",
     contactEmail: "info@guruoftech.com",
+    whatsapp: "919312166668",
     socials: {
       twitter: "https://twitter.com/Guruof_tech",
       linkedin: "https://www.linkedin.com/company/guruoftech/",
@@ -60,13 +68,14 @@ const brands: Record<BrandKey, Brand> = {
     legalName: "TechLightz Infosystems",
     domain: "techlightz.com",
     description:
-      "TechLightz is a full-stack software development company building web platforms, mobile apps, and e-commerce products for businesses across the globe.",
+      "TechLightz is a full-stack software development company building web platforms, mobile apps, and AI-driven products for businesses across the globe.",
     logoImage: "/techlightz.png",
     favicon: "/favicon-techlightz.svg",
     logoLetter: "T",
     accentFrom: "#2f6df5",
     accentTo: "#15376e",
     contactEmail: "info@techlightz.com",
+    whatsapp: "919312166668",
   },
 };
 

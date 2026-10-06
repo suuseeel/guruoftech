@@ -3,7 +3,7 @@ import { getRequestBrand } from "@/lib/brand-server";
 import { brandText } from "@/lib/brand";
 import { IndustryArt } from "@/components/industry/art";
 import Link from "next/link";
-import { ArrowUpRight, Building2, Rocket, ShoppingCart, Smartphone } from "lucide-react";
+import { ArrowUpRight, BrainCircuit, Building2, Rocket, Smartphone } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { CtaBar } from "@/components/industry/sections";
 import { industriesMeta } from "@/components/industry/data";
@@ -25,9 +25,9 @@ const workTypes = [
     tone: "bg-linear-to-br from-accent to-accent-2 text-white",
   },
   {
-    icon: ShoppingCart,
-    title: "eCommerce storefronts",
-    desc: "B2B and B2C platforms with custom catalog, checkout, and order management.",
+    icon: BrainCircuit,
+    title: "AI & automation products",
+    desc: "Chatbots, agents, and workflow automation layered onto an existing stack.",
     span: "md:col-span-3",
     tone: "bg-surface border border-border",
   },
@@ -56,7 +56,7 @@ export default function CaseStudiesPage() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <Reveal>
             <span className="eyebrow-badge">Case Studies</span>
-            <h1 className="mt-4 text-h1 font-semibold tracking-tight">
+            <h1 className="mt-4 text-h2 font-semibold tracking-tight">
               Detailed write-ups, <span className="text-accent">coming soon</span>
             </h1>
             <p className="mt-4 max-w-xl text-body-lg text-muted">

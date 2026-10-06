@@ -51,7 +51,7 @@
 
   /* =========================================================
      TYPOGRAPHY SCALE — single source of truth for text size.
-     Generates `.text-eyebrow`, `.text-h1`, etc. Tailwind utilities.
+     Generates `.text-eyebrow`, `.text-h2`, etc. Tailwind utilities.
      Use these everywhere instead of ad hoc text-xs/text-[11px]/etc,
      so every page and every card shares the same sizes.
   ========================================================= */
@@ -67,11 +67,23 @@
   --text-body-lg--line-height: 1.6;
   --text-h4: 1.25rem; /* 20px — card titles, small headings */
   --text-h4--line-height: 1.3;
-  --text-h3: clamp(1.375rem, 1rem + 1.2vw, 1.625rem); /* ~22–26px — sub-headings */
+  --text-h3: clamp(
+    1.375rem,
+    1rem + 1.2vw,
+    1.625rem
+  ); /* ~22–26px — sub-headings */
   --text-h3--line-height: 1.25;
-  --text-h2: clamp(1.875rem, 1.4rem + 1.8vw, 2.5rem); /* ~30–40px — section headings */
+  --text-h2: clamp(
+    1.875rem,
+    1.4rem + 1.8vw,
+    2.5rem
+  ); /* ~30–40px — section headings */
   --text-h2--line-height: 1.15;
-  --text-h1: clamp(2.5rem, 1.8rem + 2.8vw, 3.75rem); /* ~40–60px — page/hero titles */
+  --text-h1: clamp(
+    2.5rem,
+    1.8rem + 2.8vw,
+    3.75rem
+  ); /* ~40–60px — page/hero titles */
   --text-h1--line-height: 1.05;
 }
 
@@ -161,36 +173,29 @@ body {
    "Technology DNA", but theme-aware via existing tokens instead of
    hardcoded colors, so it needs no separate light/dark override. */
 .eyebrow-badge {
-   display: inline-flex;
+  display: inline-flex;
 
   align-items: center;
   justify-content: center;
 
   min-height: 37px;
 
-  padding:
-    7px 22px;
+  padding: 7px 22px;
 
-  border:
-    1px solid
-    rgba(54, 132, 255, 0.75);
+  border: 1px solid rgba(54, 132, 255, 0.75);
 
   border-radius: 999px;
 
-  background:var(--panel);
-  color:
-    #3b84fa;
+  background: var(--panel);
+  color: #3b84fa;
 
   font-size: var(--text-eyebrow);
 
-  letter-spacing:
-    clamp(2px, 0.25vw, 4px);
+  letter-spacing: clamp(2px, 0.25vw, 4px);
 
-  box-shadow:
-    0 0 25px
-    rgba(30, 106, 255, 0.08);
-    
-    text-transform: uppercase;
+  box-shadow: 0 0 25px rgba(30, 106, 255, 0.08);
+
+  text-transform: uppercase;
 }
 
 .panel {
@@ -881,11 +886,9 @@ body {
    ANNOUNCEMENT BAR
 ========================================================= */
 
-
 /* =========================================================
    NAV SHELL
 ========================================================= */
-
 
 .guru-header-scrolled .guru-nav-shell {
   padding-top: 7px;
@@ -895,7 +898,6 @@ body {
 /* =========================================================
    NAVBAR
 ========================================================= */
-
 
 .dark .guru-navbar {
   box-shadow:
@@ -907,23 +909,19 @@ body {
    BRAND
 ========================================================= */
 
-
 /* =========================================================
    DESKTOP NAV
 ========================================================= */
 
-
 .guru-nav-dropdown {
   position: relative;
 }
-
 
 .guru-nav-item:hover {
   color: var(--header-text);
 
   background: var(--header-hover);
 }
-
 
 .guru-nav-item-active::after {
   content: "";
@@ -947,7 +945,6 @@ body {
   box-shadow: 0 0 9px var(--header-accent);
 }
 
-
 /* =========================================================
    DROPDOWN
 ========================================================= */
@@ -962,10 +959,9 @@ body {
   width: 600px;
 
   padding-top: 11px;
-
   transform: translateX(-50%);
-  background-color: var(--header-panel);
-  backdrop-filter: blur(20px);
+  /* background-color: var(--header-panel); */
+  /* backdrop-filter: blur(20px); */
 }
 
 .guru-dropdown-company-anchor {
@@ -981,9 +977,9 @@ body {
 
   border-radius: 20px;
 
-  background: var(--header-panel);
+  background: white;
 
-  backdrop-filter: blur(20px);
+  /* backdrop-filter: blur(20px); */
 
   box-shadow:
     0 30px 90px rgba(0, 0, 0, 0.15),
@@ -992,14 +988,14 @@ body {
   animation: guruDropdownIn 0.18s ease;
 }
 
-.dark .guru-dropdown-panel {
+/* .dark .guru-dropdown-panel {
   box-shadow:
     0 30px 90px rgba(0, 0, 0, 0.38),
     0 0 35px rgba(50, 90, 220, 0.07),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
   backdrop-filter: blur(20px);
-}
+} */
 
 .guru-dropdown-top {
   display: flex;
@@ -1312,7 +1308,6 @@ body {
 
   flex-shrink: 0;
 }
-
 
 /* =========================================================
    MOBILE
@@ -2096,7 +2091,6 @@ body {
   }
 }
 
-
 /* =========================================================
    STATUS
 ========================================================= */
@@ -2295,7 +2289,6 @@ body {
 
     border: 1px solid rgba(74, 125, 255, 0.2);
   }
-
 }
 
 /* =========================================================
@@ -2687,7 +2680,6 @@ body {
   }
 }
 
-
 .guru-header-button-icon {
   position: relative;
 
@@ -2893,7 +2885,7 @@ html:not(.dark) .guru-nav-item-active {
 }
 
 .guru-tech-name {
-  color:var(--guru-text) ;
+  color: var(--guru-text);
 
   font-size: var(--text-body-sm);
 
@@ -2929,29 +2921,21 @@ html:not(.dark) .guru-nav-item-active {
 
   min-height: 37px;
 
-  padding:
-    7px 22px;
+  padding: 7px 22px;
 
-  border:
-    1px solid
-    rgba(54, 132, 255, 0.75);
+  border: 1px solid rgba(54, 132, 255, 0.75);
 
   border-radius: 999px;
 
-  background:
-    rgba(7, 35, 82, 0.45);
+  background: rgba(7, 35, 82, 0.45);
 
-  color:
-    #6fa7ff;
+  color: #6fa7ff;
 
   font-size: var(--text-eyebrow);
 
-  letter-spacing:
-    clamp(2px, 0.25vw, 4px);
+  letter-spacing: clamp(2px, 0.25vw, 4px);
 
-  box-shadow:
-    0 0 25px
-    rgba(30, 106, 255, 0.08);
+  box-shadow: 0 0 25px rgba(30, 106, 255, 0.08);
 }
 
 /* =========================================================
@@ -3074,14 +3058,21 @@ html:not(.dark) .guru-nav-item-active {
 
 /* Industry pages: gentle floating motion for the 3D illustrations */
 @keyframes industry-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
 }
 .industry-float {
   animation: industry-float 6s ease-in-out infinite;
 }
 @media (prefers-reduced-motion: reduce) {
-  .industry-float { animation: none; }
+  .industry-float {
+    animation: none;
+  }
 }
 
 /* AI menu + AI page: per-category colour via --c */
@@ -3099,16 +3090,26 @@ html:not(.dark) .guru-nav-item-active {
 }
 
 @keyframes ai-flash {
-  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--c, var(--accent)) 55%, transparent); }
-  60% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--c, var(--accent)) 0%, transparent); }
-  100% { box-shadow: 0 0 0 0 transparent; }
+  0% {
+    box-shadow: 0 0 0 0
+      color-mix(in srgb, var(--c, var(--accent)) 55%, transparent);
+  }
+  60% {
+    box-shadow: 0 0 0 10px
+      color-mix(in srgb, var(--c, var(--accent)) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
 }
 .ai-flash {
   animation: ai-flash 1.4s ease-out 2;
   border-color: var(--c, var(--accent)) !important;
 }
 @media (prefers-reduced-motion: reduce) {
-  .ai-flash { animation: none; }
+  .ai-flash {
+    animation: none;
+  }
 }
 
 /* =========================================================
@@ -3124,7 +3125,7 @@ html:not(.dark) .guru-nav-item-active {
 ========================================================= */
 :root {
   --sec-y: 3rem;
-  --hero-top: 3rem;
+  --hero-top: 2rem;
   --head-gap: 2.5rem;
   --grid-gap: 1.5rem;
   --card-pad: 1.5rem;
@@ -3145,7 +3146,7 @@ html:not(.dark) .guru-nav-item-active {
 @media (min-width: 1024px) {
   :root {
     --sec-y: 5rem;
-    --hero-top: 5rem;
+    --hero-top: 2rem;
   }
 }
 .section {

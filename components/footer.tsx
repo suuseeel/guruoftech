@@ -98,7 +98,7 @@ export function Footer() {
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
               {brand.legalName} is a full-stack software development company
-              building web platforms, mobile apps, and e-commerce products
+              building web platforms, mobile apps, and AI-driven products
               for businesses across the globe.
             </p>
             {socials && (

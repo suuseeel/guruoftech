@@ -17,7 +17,7 @@ export type HeroProps = {
 /* Illustrations stay compact: they sit beside the copy, never over or under it. */
 const ART_SIZE = "mx-auto w-full max-w-[18rem] sm:max-w-[21rem] lg:max-w-[22rem]";
 
-const titleCls = "mt-4 text-h1 font-semibold tracking-tight";
+const titleCls = "mt-4 text-h2 font-semibold tracking-tight";
 
 function HeroActions({ light = false, center = false }: { light?: boolean; center?: boolean }) {
   return (

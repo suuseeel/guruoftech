@@ -114,7 +114,7 @@ export default async function AboutPage() {
 
     <p>
       {brandText(
-        "Guru of Tech is a globally recognized software development company based in Noida, India — building web platforms, mobile apps, and e-commerce products for businesses across the globe.",
+        "Guru of Tech is a globally recognized software development company based in Noida, India — building web platforms, mobile apps, and AI-driven products for businesses across the globe.",
         brand,
       )}
     </p>

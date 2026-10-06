@@ -26,8 +26,6 @@ import {
   Rocket,
   Server,
   ShieldCheck,
-  ShoppingBag,
-  ShoppingCart,
   Smartphone,
   Sparkles,
   Workflow,
@@ -38,7 +36,6 @@ import { SiReact, SiNextdotjs, SiNodedotjs } from "react-icons/si";
 
 import { FaAws } from "react-icons/fa6";
 
-import { ThemeToggle } from "@/components/theme-toggle";
 import { aiGroups } from "@/components/ai/data";
 import { industriesMeta } from "@/components/industry/data";
 
@@ -64,12 +61,6 @@ const servicesMenu = [
     href: "/services/software-development",
     icon: Code2,
     desc: "Product, enterprise, offshore & nearshore",
-  },
-  {
-    title: "eCommerce Development",
-    href: "/services/ecommerce-development",
-    icon: ShoppingCart,
-    desc: "Storefronts, B2B/B2C, integrations",
   },
   {
     title: "Mobile App Development",
@@ -136,11 +127,6 @@ const techHighlights: TechHighlight[] = [
     Icon: Sparkles,
     color: "#A78BFA",
   },
-  {
-    label: "eCommerce",
-    Icon: ShoppingCart,
-    color: "#22C55E",
-  },
 ];
 
 const technologiesMenu = [
@@ -167,12 +153,6 @@ const technologiesMenu = [
     href: "/technologies/cms",
     icon: FileText,
     items: ["WordPress", "Drupal", "Sitecore", "Joomla"],
-  },
-  {
-    title: "eCommerce",
-    href: "/technologies/ecommerce",
-    icon: ShoppingBag,
-    items: ["Magento", "Shopify", "WooCommerce"],
   },
   {
     title: "Full Stack",
@@ -284,7 +264,7 @@ const announcementMessages = [
   },
   {
     icon: "⚡",
-    text: "Full-stack Web • Mobile • AI • eCommerce",
+    text: "Full-stack Web • Mobile • AI • Cloud",
   },
   {
     icon: "◈",
@@ -622,8 +602,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
                                   </span>
 
                                   <strong>{activeGroup.title}</strong>
-
-                                  <small>{activeGroup.items.length} services</small>
+                                  
                                 </div>
 
                                 <div className="guru-ai-menu-list">
@@ -666,8 +645,6 @@ function HeaderContent({ pathname }: { pathname: string }) {
 
                                 <strong>Services</strong>
                               </div>
-
-                              <span className="guru-dropdown-number">01</span>
                             </div>
 
                             <div className="guru-dropdown-grid">
@@ -718,8 +695,6 @@ function HeaderContent({ pathname }: { pathname: string }) {
 
                                 <strong>Technologies</strong>
                               </div>
-
-                              <span className="guru-dropdown-number">02</span>
                             </div>
 
                             <div className="guru-dropdown-grid">
@@ -740,7 +715,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
                                       <strong>{technology.title}</strong>
 
                                       <small>
-                                        {technology.items.join(" · ")}
+                                        {technology.items.join(" , ")}
                                       </small>
                                     </span>
 
@@ -772,8 +747,6 @@ function HeaderContent({ pathname }: { pathname: string }) {
 
                                 <strong>Industries</strong>
                               </div>
-
-                              <span className="guru-dropdown-number">03</span>
                             </div>
 
                             <div className="guru-industry-grid">
@@ -814,8 +787,6 @@ function HeaderContent({ pathname }: { pathname: string }) {
 
                                 <strong>Company</strong>
                               </div>
-
-                              <span className="guru-dropdown-number">04</span>
                             </div>
 
                             <div className="guru-company-list">
@@ -846,8 +817,6 @@ function HeaderContent({ pathname }: { pathname: string }) {
           ================================================= */}
 
           <div className="guru-nav-actions">
-            <ThemeToggle />
-
             <Link href="/contact" className="guru-header-button group">
               <span>Get in touch</span>
 
@@ -870,8 +839,6 @@ function HeaderContent({ pathname }: { pathname: string }) {
           ================================================= */}
 
           <div className="guru-mobile-actions">
-            <ThemeToggle />
-
             <Link href="/contact" className="guru-mobile-header-cta group">
               <span>Get in touch</span>
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

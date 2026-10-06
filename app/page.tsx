@@ -27,7 +27,6 @@ import {
   Server,
   ShieldCheck,
   ShoppingBag,
-  ShoppingCart,
   Smartphone,
   Sparkles,
   Timer,
@@ -53,7 +52,6 @@ import { AIFlow } from "@/components/ai-flow";
 import { StatCounter } from "@/components/stat-counter";
 import {
   ArchitectureGraphic,
-  CartFlowGraphic,
   ChecklistGraphic,
   DeviceGraphic,
   PipelineGraphic,
@@ -290,8 +288,6 @@ const techMarquee = [
   "PostgreSQL",
   "Firebase",
   "WordPress",
-  "Magento",
-  "Shopify",
   "MERN",
   "MEAN",
   "OpenAI",
@@ -390,13 +386,6 @@ const services = [
     href: "/services/startup-consulting",
   },
   {
-    title: "eCommerce Development",
-    desc: "Storefronts and B2B/B2C platforms with the catalog, checkout, and logistics stack to match.",
-    icon: ShoppingCart,
-    graphic: CartFlowGraphic,
-    href: "/services/ecommerce-development",
-  },
-  {
     title: "Mobile App Development",
     desc: "Native and cross-platform apps with a shared design language.",
     icon: Smartphone,
@@ -409,16 +398,16 @@ const services = [
 // portfolio entries until case studies are ready (see /case-studies).
 // No specific client names or invented results; each one represents
 // a type of product, not a claimed historical delivery.
-const projectFilters = ["All", "Web Platform", "Dashboard", "Mobile App", "eCommerce", "AI & Automation"];
+const projectFilters = ["All", "Web Platform", "Dashboard", "Mobile App", "Retail", "AI & Automation"];
 
 const projects: Project[] = [
   {
-    name: "NovaCart",
-    type: "eCommerce",
-    industry: "Retail & eCommerce",
-    description: "A storefront with catalog, checkout, and order management built in.",
-    stack: ["Shopify", "React", "Node.js"],
-    icon: <ShoppingCart className="h-5 w-5" />,
+    name: "NovaStock",
+    type: "Retail",
+    industry: "Retail",
+    description: "An inventory and point-of-sale platform syncing stock across stores in real time.",
+    stack: ["React", "Node.js", "PostgreSQL"],
+    icon: <ShoppingBag className="h-5 w-5" />,
   },
   {
     name: "MediTrack",
@@ -526,12 +515,12 @@ const industries = [
     href: "/industries/fintech"
   },
   {
-    name: "Retail & eCommerce",
+    name: "Retail",
     icon: <ShoppingBag className="h-4 w-4" />,
-    blurb: "Storefronts, catalogs, and order management at scale.",
-    examples: ["Storefronts & catalogs", "Order management at scale"],
-    stack: ["Magento", "Shopify", "WooCommerce", "Recommendation AI"],
-    highlight: "Our specialists connect you to a pool of customers by building eCommerce marketplaces that scale with demand.",
+    blurb: "Inventory, POS, and store operations at scale.",
+    examples: ["Inventory & POS systems", "Store operations at scale"],
+    stack: ["React", "Node.js", "PostgreSQL", "Demand-forecasting AI"],
+    highlight: "We build inventory and store-ops systems that keep stock numbers honest across every location.",
     src:"/homepage/Retail_3D.png",
     href: "/industries/retail-ecommerce"
   },
@@ -923,8 +912,8 @@ export default function Home() {
                 className="guru-hero-title animate-fade-in-up"
                 style={{ animationDelay: "0.05s" }}
               >
-                We engineer
-                <span className="guru-gradient-word">AI-powered</span> software
+                We engineer 
+                <span className="guru-gradient-word"> AI-powered</span> software
                 for <span className="guru-gradient-word">real businesses</span>
               </h2>
 
@@ -1128,7 +1117,7 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <ProductsShowcase />
+      {/* <ProductsShowcase /> */}
 
       {/* Company teasers — a single divided rail instead of four
           separate cards. */}
