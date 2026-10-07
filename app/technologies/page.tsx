@@ -60,9 +60,6 @@ export default function TechnologiesPage() {
                       <t.icon className="h-6 w-6" />
                     </span>
                     <div>
-                      <span className="text-caption font-semibold tabular-nums text-muted">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
                       <h2 className="text-h3 font-semibold leading-tight">{t.title}</h2>
                       <p className="mt-2 text-body-sm text-muted">{t.short}</p>
                     </div>

@@ -45,9 +45,6 @@ function Tile({ item, i }: { item: IndustryMeta; i: number }) {
         tints[i % tints.length]
       } p-7 transition-all duration-300 ${item.href ? "hover:-translate-y-1 hover:border-accent hover:shadow-xl hover:shadow-accent/10" : ""}`}
     >
-      <span className="text-caption font-semibold tabular-nums text-muted">
-        {String(i + 1).padStart(2, "0")}
-      </span>
       <div className={isWide ? "sm:max-w-[50%]" : "max-w-[62%] lg:max-w-[58%]"}>
         <h2 className="text-h3 mt-2 font-semibold leading-tight">{item.name}</h2>
         <p className="mt-2 text-body-sm text-muted">{item.blurb}</p>

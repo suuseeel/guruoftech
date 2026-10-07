@@ -110,10 +110,7 @@ export function BodyNumbered({ paragraphs }: BodyProps) {
       <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
         {paragraphs.map((p, i) => (
           <Reveal key={p} delay={i * 0.05} className="border-t border-border pt-5">
-            <span className="text-caption font-semibold tabular-nums text-accent">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <p className="mt-2 text-body-sm text-muted">{p}</p>
+            <p className="text-body-sm text-muted">{p}</p>
           </Reveal>
         ))}
       </div>
@@ -162,17 +159,14 @@ export function BodyTwoCol({ paragraphs }: BodyProps) {
 
 type OfferProps = { offerings: Offering[] };
 
-/* Spec-sheet rows: numeral, title, description, icon. */
+/* Spec-sheet rows: title, description, icon. */
 export function OfferRows({ offerings }: OfferProps) {
   return (
     <Wrap>
       <ul className="divide-y divide-border border-y border-border">
         {offerings.map((item, i) => (
           <Reveal key={item.title} delay={i * 0.04}>
-            <li className="group grid items-start gap-6 px-2 py-8 transition-colors hover:bg-accent-soft/60 md:grid-cols-[80px_1fr_1.4fr_48px] md:gap-8 md:px-6">
-              <span className="text-h3 font-light tabular-nums text-muted/60 transition-colors group-hover:text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
+            <li className="group grid items-start gap-6 px-2 py-8 transition-colors hover:bg-accent-soft/60 md:grid-cols-[1fr_1.4fr_48px] md:gap-8 md:px-6">
               <h2 className="text-h4 font-semibold">{item.title}</h2>
               <p className="text-body-sm text-muted">{item.desc}</p>
               <span className="hidden h-11 w-11 items-center justify-center rounded-full border border-border text-accent transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-white md:flex">
@@ -220,7 +214,7 @@ export function OfferBento({ offerings }: OfferProps) {
   );
 }
 
-/* 2×2 with oversized outlined numerals bleeding off each card. */
+/* 2×2 offering cards. */
 export function OfferNumerals({ offerings }: OfferProps) {
   return (
     <Wrap>
@@ -228,16 +222,10 @@ export function OfferNumerals({ offerings }: OfferProps) {
         {offerings.map((item, i) => (
           <Reveal key={item.title} delay={i * 0.05}>
             <div className="group relative h-full overflow-hidden rounded-3xl border border-border bg-surface pb-10 p-6">
-              <span
-                aria-hidden
-                className="pointer-events-none absolute -right-2 -top-6 select-none text-[9rem] font-bold leading-none text-transparent transition-colors [-webkit-text-stroke:1.5px_color-mix(in_srgb,var(--accent)_35%,transparent)] group-hover:[-webkit-text-stroke-color:var(--accent)]"
-              >
-                {i + 1}
-              </span>
               <span className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-accent-soft text-accent">
                 <item.icon className="h-6 w-6" />
               </span>
-              <h2 className="text-h4 relative mt-16 font-semibold">{item.title}</h2>
+              <h2 className="text-h4 relative mt-4 font-semibold">{item.title}</h2>
               <p className="relative mt-2 max-w-md text-body-sm text-muted">{item.desc}</p>
             </div>
           </Reveal>
@@ -265,14 +253,9 @@ export function OfferRoute({ offerings }: OfferProps) {
               />
               <span aria-hidden className="mx-auto hidden h-8 w-px bg-accent/40 lg:block" />
               <div className="flex-1 rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent">
-                <div className="flex items-center justify-between">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent">
-                    <item.icon className="h-5 w-5" />
-                  </span>
-                  <span className="text-caption font-semibold tabular-nums text-muted">
-                    Stop {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent">
+                  <item.icon className="h-5 w-5" />
+                </span>
                 <h2 className="text-h4 mt-4 font-semibold">{item.title}</h2>
                 <p className="mt-2 text-body-sm text-muted">{item.desc}</p>
               </div>
@@ -633,12 +616,9 @@ export function ProcessLabelsGrid({ title, steps }: ProcessProps) {
             {steps.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.05}>
                 <div className="group flex h-full min-h-[150px] flex-col justify-between rounded-2xl border border-border bg-surface transition-colors hover:border-accent p-6">
-                  <div className="flex items-start justify-between">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent transition-colors group-hover:bg-accent group-hover:text-white">
-                      {s.icon && <s.icon className="h-5 w-5" />}
-                    </span>
-                    <span className="text-caption tabular-nums text-muted">0{i + 1}</span>
-                  </div>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-soft text-accent transition-colors group-hover:bg-accent group-hover:text-white">
+                    {s.icon && <s.icon className="h-5 w-5" />}
+                  </span>
                   <h3 className="text-h4 font-semibold">{s.title}</h3>
                 </div>
               </Reveal>

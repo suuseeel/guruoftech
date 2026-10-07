@@ -64,10 +64,7 @@ export default function ServicesPage() {
               }`}
             >
               <div className={i % 2 ? "lg:order-2" : ""}>
-                <span className="text-caption font-semibold tabular-nums text-accent">
-                  {String(i + 1).padStart(2, "0")} / {String(servicesMeta.length).padStart(2, "0")}
-                </span>
-                <h2 className="text-h2 mt-4 font-semibold tracking-tight">{s.title}</h2>
+                <h2 className="text-h2 font-semibold tracking-tight">{s.title}</h2>
                 <p className="mt-4 max-w-lg text-body text-muted">{s.short}</p>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {s.tags.map((t) => (

@@ -30,10 +30,7 @@ export function OfferDense({ offerings, heading }: { offerings: Offering[]; head
                 <o.icon className="h-5 w-5" />
               </span>
               <div>
-                <div className="flex items-baseline gap-3">
-                  <h3 className="text-h4 font-semibold">{o.title}</h3>
-                  <span className="text-caption tabular-nums text-muted/70">{String(i + 1).padStart(2, "0")}</span>
-                </div>
+                <h3 className="text-h4 font-semibold">{o.title}</h3>
                 <p className="mt-2 text-body-sm text-muted">{o.desc}</p>
               </div>
             </div>
@@ -61,9 +58,6 @@ export function OfferZigzag({ offerings }: { offerings: Offering[] }) {
                   i % 2 ? "md:order-2" : ""
                 }`}
               >
-                <span className="absolute -bottom-4 -right-2 select-none text-[7rem] font-bold leading-none text-white/15">
-                  {i + 1}
-                </span>
                 <o.icon className="relative h-14 w-14" strokeWidth={1.5} />
               </div>
               <div>

@@ -194,9 +194,8 @@ export default function AboutUsPage() {
             <Reveal key={item.title} delay={i * 0.06}>
               <div className={`h-full py-10 ${i === 0 ? "md:pr-8" : i === 2 ? "md:pl-8" : "md:px-8"}`}>
                 <div className="flex items-center gap-3">
-                  <span className="text-caption font-semibold tabular-nums text-accent">0{i + 1}</span>
-                  <span className="h-px flex-1 bg-border" />
                   <item.icon className="h-5 w-5 text-accent" />
+                  <span className="h-px flex-1 bg-border" />
                 </div>
                 <h2 className="text-h4 mt-4 font-semibold">{item.title}</h2>
                 <p className="mt-2 text-body-sm text-muted">{item.desc}</p>

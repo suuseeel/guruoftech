@@ -67,10 +67,6 @@ export function ProjectShowcase({
         {visible.map((project, i) => (
           <Reveal key={project.name} delay={(i % 4) * 0.05}>
             <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface p-4 transition-all duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-lg hover:shadow-accent/10">
-              <span className="absolute right-3 top-3 z-10 text-xs font-semibold text-muted/60">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-
               <ProjectThumb icon={project.icon} />
 
               <div className="mt-4 flex flex-1 flex-col">

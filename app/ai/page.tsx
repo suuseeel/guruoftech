@@ -193,10 +193,7 @@ export default function AIPage() {
                 >
                   <group.icon className="h-7 w-7" />
                 </span>
-                <span className="mt-5 block text-caption font-semibold tabular-nums" style={{ color: group.color }}>
-                  {String(gi + 1).padStart(2, "0")} / {String(aiGroups.length).padStart(2, "0")}
-                </span>
-                <h2 className="text-h3 mt-1 font-semibold">{group.title}</h2>
+                <h2 className="text-h3 mt-5 font-semibold">{group.title}</h2>
                 <p className="mt-2 text-body-sm text-muted">{group.blurb}</p>
 
                 <ul className="mt-6 hidden space-y-1 border-t pt-5 lg:block" style={{ borderColor: tint(group.color, 25) }}>

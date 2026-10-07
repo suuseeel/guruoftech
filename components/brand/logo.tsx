@@ -29,18 +29,18 @@ export function BrandLogo({ variant = "header" }: { variant?: "header" | "footer
   return (
     <span className="flex items-center gap-2.5">
       {brand.iconImage ? (
-        <span className={`relative flex shrink-0 overflow-hidden rounded-lg bg-white p-1 shadow-sm ${badgeSize}`}>
+        <span className={`relative flex shrink-0 overflow-hidden rounded-lg bg-white p-1 ${badgeSize}`}>
           <Image src={brand.iconImage} alt={brand.name} fill priority className="object-contain p-0.5" />
         </span>
       ) : (
         <span
           style={{ background: `linear-gradient(135deg, ${brand.accentFrom}, ${brand.accentTo})` }}
-          className={`flex shrink-0 items-center justify-center rounded-lg font-bold text-white shadow-sm ${badgeSize}`}
+          className={`flex shrink-0 items-center justify-center rounded-lg font-bold text-white ${badgeSize}`}
         >
           {brand.logoLetter}
         </span>
       )}
-      <span className="text-lg font-semibold tracking-tight">{brand.name}</span>
+      <span className="text-lg font-semibold">{brand.fullName}</span>
     </span>
   );
 }

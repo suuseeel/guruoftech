@@ -15,9 +15,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const podParts = [
-  { n: "01", title: "A lead engineer", text: "One senior person accountable for how the thing is built." },
-  { n: "02", title: "The disciplines your project needs", text: "Only the roles the work actually calls for." },
-  { n: "03", title: "One delivery contact", text: "The same people from kickoff to launch, not a different name every sprint." },
+  { title: "A lead engineer", text: "One senior person accountable for how the thing is built." },
+  { title: "The disciplines your project needs", text: "Only the roles the work actually calls for." },
+  { title: "One delivery contact", text: "The same people from kickoff to launch, not a different name every sprint." },
 ];
 
 export default function TeamPage() {
@@ -74,10 +74,9 @@ export default function TeamPage() {
           </Reveal>
           <div className="mt-12 grid gap-10 md:grid-cols-3">
             {podParts.map((p, i) => (
-              <Reveal key={p.n} delay={i * 0.06}>
+              <Reveal key={p.title} delay={i * 0.06}>
                 <div className="border-t-2 border-accent pt-5">
-                  <span className="text-[3.5rem] font-bold leading-none text-accent/20">{p.n}</span>
-                  <h3 className="text-h4 mt-2 font-semibold">{p.title}</h3>
+                  <h3 className="text-h4 font-semibold">{p.title}</h3>
                   <p className="mt-2 text-body-sm text-muted">{p.text}</p>
                 </div>
               </Reveal>

@@ -38,9 +38,6 @@ export function OfferTabs({ offerings, heading }: { offerings: Offering[]; headi
                   <span className="[&>svg]:h-5 [&>svg]:w-5">{item.iconNode}</span>
                 </span>
                 <span className="whitespace-nowrap text-sm font-semibold lg:whitespace-normal">{item.title}</span>
-                <span className="ml-auto hidden text-caption tabular-nums text-muted lg:block">
-                  0{i + 1}
-                </span>
               </button>
             );
           })}
@@ -50,12 +47,6 @@ export function OfferTabs({ offerings, heading }: { offerings: Offering[]; headi
           role="tabpanel"
           className="relative min-h-[300px] overflow-hidden rounded-3xl border border-border bg-linear-to-br from-accent-soft via-surface to-surface p-8 sm:p-12"
         >
-          <span
-            aria-hidden
-            className="pointer-events-none absolute -bottom-10 -right-2 select-none text-[12rem] font-bold leading-none text-accent/10"
-          >
-            0{active + 1}
-          </span>
           <AnimatePresence mode="wait">
             <motion.div
               key={current.title}

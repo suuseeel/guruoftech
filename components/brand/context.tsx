@@ -41,7 +41,7 @@ function walkAndRewrite(root: Node, shortFrom: string, shortTo: string, longFrom
 export function BrandProvider({ brand, children }: { brand: Brand; children: ReactNode }) {
   useEffect(() => {
     if (brand.key === DEFAULT_BRAND_KEY) return;
-    const SHORT_FROM = "GuruOfTech";
+    const SHORT_FROM = "Guru of Tech";
     const LONG_FROM = "Guru of Tech";
 
     const run = (root: Node) => walkAndRewrite(root, SHORT_FROM, brand.name, LONG_FROM, brand.fullName);
