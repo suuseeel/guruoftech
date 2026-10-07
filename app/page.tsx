@@ -787,9 +787,9 @@ const companyTeasers = [
   {
     icon: Users,
     graphic: TeamGraphic,
-    title: "Team",
-    desc: "How we staff a project, discipline by discipline.",
-    href: "/team",
+    title: "About Us",
+    desc: "Who we are, and how we staff a project.",
+    href: "/about-us",
   },
   {
     icon: Briefcase,

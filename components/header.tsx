@@ -193,10 +193,6 @@ const companyMenu = [
     href: "/about",
   },
   {
-    title: "Team",
-    href: "/team",
-  },
-  {
     title: "Case Studies",
     href: "/case-studies",
   },

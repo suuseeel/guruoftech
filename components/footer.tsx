@@ -10,7 +10,6 @@ import { useBrand } from "@/components/brand/context";
 const companyLinks = [
   { label: "Home", href: "/" },
   { label: "Overview", href: "/about" },
-  { label: "Team", href: "/team" },
   { label: "Careers", href: "/careers" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },

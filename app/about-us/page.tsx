@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getRequestBrand } from "@/lib/brand-server";
 import { brandText } from "@/lib/brand";
-import { Compass, Quote, RefreshCw, ShieldCheck, Target, Users } from "lucide-react";
+import { ArrowUpRight, Compass, Quote, RefreshCw, ShieldCheck, Target, Users } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { CtaBar } from "@/components/industry/sections";
+import { team } from "@/components/team/data";
 
 export async function generateMetadata(): Promise<Metadata> {
   const brand = await getRequestBrand();
@@ -203,6 +205,29 @@ export default function AboutUsPage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* Meet the team — the only place this links out from */}
+      <section className="section mx-auto max-w-7xl px-6 lg:px-8">
+        <Reveal>
+          <Link
+            href="/team"
+            className="group flex flex-col items-start gap-6 overflow-hidden rounded-3xl border border-border bg-linear-to-br from-accent-soft/70 to-surface p-8 transition-colors hover:border-accent sm:flex-row sm:items-center sm:justify-between sm:p-12"
+          >
+            <div>
+              <span className="text-eyebrow font-semibold uppercase tracking-[0.2em] text-accent">Who&apos;s behind it</span>
+              <h2 className="text-h3 mt-3 font-semibold tracking-tight">Meet the team</h2>
+              <p className="mt-2 max-w-md text-body-sm text-muted">
+                {team.length} people, staffed as a small senior pod rather than a rotating cast — see who
+                you&apos;d actually work with.
+              </p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-accent px-6 py-3 text-sm font-medium text-white transition-colors group-hover:bg-accent-strong">
+              Meet the team
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </span>
+          </Link>
+        </Reveal>
       </section>
 
       <CtaBar title="Ready to build something with us?" />
