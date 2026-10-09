@@ -986,7 +986,7 @@ export default function Home() {
       </Reveal>
      
       <section className="section mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mt-12 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
           <div className="space-y-5 text-sm leading-relaxed lg:sticky lg:top-36">
             <SectionHeadingLeft
               title="Services built around outcomes — AI included"
@@ -1062,7 +1062,7 @@ export default function Home() {
         className="border-y border-border bg-surface-muted/50"
       >
         <div className="section mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mt-12 grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <div className="space-y-5 text-sm leading-relaxed lg:sticky lg:top-36">
               <SectionHeadingLeft
                 title="Services we build, not just talk about"

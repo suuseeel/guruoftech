@@ -637,7 +637,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
                           <>
                             <div className="guru-dropdown-top">
                               <div>
-                                <span>WHAT WE BUILD</span>
+                                {/* <span>WHAT WE BUILD</span> */}
 
                                 <strong>Services</strong>
                               </div>
@@ -687,7 +687,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
                           <>
                             <div className="guru-dropdown-top">
                               <div>
-                                <span>OUR TECHNOLOGY STACK</span>
+                                {/* <span>OUR TECHNOLOGY STACK</span> */}
 
                                 <strong>Technologies</strong>
                               </div>
@@ -739,7 +739,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
                           <>
                             <div className="guru-dropdown-top">
                               <div>
-                                <span>WHO WE SERVE</span>
+                                {/* <span>WHO WE SERVE</span> */}
 
                                 <strong>Industries</strong>
                               </div>
@@ -779,7 +779,7 @@ function HeaderContent({ pathname }: { pathname: string }) {
                           <>
                             <div className="guru-dropdown-top">
                               <div>
-                                <span>GET TO KNOW US</span>
+                                {/* <span>GET TO KNOW US</span> */}
 
                                 <strong>Company</strong>
                               </div>
