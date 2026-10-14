@@ -152,7 +152,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-white/60 backdrop-blur-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent-strong" />
-                H-53, Sector-63, Noida, Uttar Pradesh, India
+                A-319, Third Floor, Anthurium, Sector 73, Noida, Uttar Pradesh - 201307, India
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0 text-accent-strong" />

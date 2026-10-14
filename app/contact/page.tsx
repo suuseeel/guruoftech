@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const contactDetails = [
   { icon: Mail, label: "Email", value: "info@guruoftech.com", href: "mailto:info@guruoftech.com" },
   { icon: Phone, label: "Phone", value: "+91 931 216 6668", href: "tel:+919312166668" },
-  { icon: MapPin, label: "Address", value: "H-53, Sector-63, Noida, Uttar Pradesh, India", href: undefined },
+  { icon: MapPin, label: "Address", value: "A-319, Third Floor, Anthurium, Sector 73, Noida, Uttar Pradesh - 201307, India", href: undefined },
 ];
 
 export default function ContactPage() {
