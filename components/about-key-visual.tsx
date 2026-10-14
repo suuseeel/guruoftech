@@ -39,7 +39,7 @@ export function AboutKeyVisual() {
           <Rocket className="h-7 w-7" />
         </span>
         <div className="text-center">
-          <div className="text-h4 font-semibold">Your Roadmap</div>
+          <div className="text-h4 font-semibold">Your Roadmap </div>
           <div className="text-caption text-muted">Planned, tracked, delivered</div>
         </div>
       </motion.div>
