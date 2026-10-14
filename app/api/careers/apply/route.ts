@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getRequestBrand } from "@/lib/brand-server";
 import { getMailer, mailFrom } from "@/lib/mailer";
 import { applicationNotificationEmail } from "@/lib/email-templates/application";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 const MAX_CV_BYTES = 5 * 1024 * 1024; // 5MB
 const ALLOWED_CV_TYPES = new Set([
@@ -9,6 +10,9 @@ const ALLOWED_CV_TYPES = new Set([
   "application/msword",
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ]);
+
+const RATE_LIMIT = 3;
+const RATE_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 
 export async function POST(req: Request) {
   let form: FormData;
@@ -24,6 +28,12 @@ export async function POST(req: Request) {
   const role = String(form.get("role") ?? "").trim();
   const message = String(form.get("message") ?? "").trim();
   const cv = form.get("cv");
+  const website = String(form.get("website") ?? "").trim();
+
+  // Honeypot: real applicants never see or fill this field.
+  if (website) {
+    return NextResponse.json({ ok: true });
+  }
 
   if (!name || !email || !role) {
     return NextResponse.json({ error: "Name, email and position are required" }, { status: 400 });
@@ -31,6 +41,15 @@ export async function POST(req: Request) {
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
+  }
+
+  const ip = getClientIp(req);
+  const rl = checkRateLimit(`careers:${ip}`, RATE_LIMIT, RATE_WINDOW_MS);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: "Too many applications sent. Please try again later." },
+      { status: 429, headers: { "Retry-After": String(rl.retryAfterSeconds) } }
+    );
   }
 
   let attachment: { filename: string; content: Buffer; contentType: string } | undefined;

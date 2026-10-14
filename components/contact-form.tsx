@@ -10,6 +10,7 @@ export function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(e: FormEvent) {
@@ -20,7 +21,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, website }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data?.error || "Something went wrong. Please try again.");
@@ -43,6 +44,20 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-surface p-6">
+      {/* Honeypot — invisible to real users, bots that auto-fill every field trip it */}
+      <div className="absolute h-0 w-0 overflow-hidden opacity-0" aria-hidden="true">
+        <label htmlFor="website">Leave this field empty</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+        />
+      </div>
+
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="text-sm font-medium">

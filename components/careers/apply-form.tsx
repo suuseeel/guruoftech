@@ -159,6 +159,12 @@ export function ApplyForm({ jobs, initialRoleSlug }: { jobs: Job[]; initialRoleS
 
   return (
     <form onSubmit={handleSubmit} className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
+      {/* Honeypot — invisible to real applicants, bots that auto-fill every field trip it */}
+      <div className="absolute h-0 w-0 overflow-hidden opacity-0" aria-hidden="true">
+        <label htmlFor="website">Leave this field empty</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="text-sm font-medium">

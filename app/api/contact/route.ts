@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import { getRequestBrand } from "@/lib/brand-server";
 import { getMailer, mailFrom } from "@/lib/mailer";
 import { contactNotificationEmail } from "@/lib/email-templates/contact";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
+
+const RATE_LIMIT = 3;
+const RATE_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 
 export async function POST(req: Request) {
   let body: unknown;
@@ -11,7 +15,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
-  const { name, email, message } = (body ?? {}) as Record<string, unknown>;
+  const { name, email, message, website } = (body ?? {}) as Record<string, unknown>;
+
+  // Honeypot: real users never see or fill this field. If it's filled, it's a bot —
+  // pretend success so the bot doesn't adapt, but don't actually send anything.
+  if (typeof website === "string" && website.trim()) {
+    return NextResponse.json({ ok: true });
+  }
 
   if (
     typeof name !== "string" ||
@@ -26,6 +36,15 @@ export async function POST(req: Request) {
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "Invalid email address" }, { status: 400 });
+  }
+
+  const ip = getClientIp(req);
+  const rl = checkRateLimit(`contact:${ip}`, RATE_LIMIT, RATE_WINDOW_MS);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: "Too many messages sent. Please try again later." },
+      { status: 429, headers: { "Retry-After": String(rl.retryAfterSeconds) } }
+    );
   }
 
   const brand = await getRequestBrand();
